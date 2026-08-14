@@ -1,0 +1,28 @@
+{% block content %}
+
+<h1> {{ branch }} </h1>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<h4>Transactions</h4>
+<tr><th>receipt_date<th>tran date<th>statement<th>description<th>cr_dr<th>amount
+</tr>
+{% for l in branch.transaction_set.all %}
+<tr>
+  <td>{{l.receipt_date}}</td>
+  <td>{{l.transaction_date}}</td>
+  <td>{{l.statement_date}}</td>
+  <td>{{l.description}}</td>
+  <td>{{l.cr_dr}}</td>
+  <td>{{l.signed_amount}}</td>
+  <td><a href="{% url 'tr:transaction_edit' l.pk %}">modify</a></td>
+  <td><a href="{% url 'tr:transaction_delete' l.pk %}">delete</a></td>
+</tr>
+{% empty %}
+  <p>This vendor has no transactions, maybe.</p>
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}
+

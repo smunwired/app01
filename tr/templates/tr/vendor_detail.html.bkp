@@ -1,0 +1,44 @@
+{% block content %}
+
+<h1> {{ vendor }} </h1>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<th><h4>Branches</h4><th><a href="{% url 'tr:branch_create' vendor.pk %}">add</a></tr>
+{% for l in vendor.branch_set.all %}
+  <tr><td>{{l.name}}</td>
+  <td><a href="{% url 'tr:branch_edit' l.pk %}">modify</a></td>
+  <td><a href="{% url 'tr:branch_delete' l.pk %}">delete</a></td>
+</tr>  
+{% empty %}
+  <p>This vendor has no titles.</p>
+{% endfor %}
+</table>
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<h4>Transactions</h4>
+<tr><th>branch<th>receipt_date<th>tran date<th>statement<th>oldest date<th>branch<th><a href="{% url 'tr:transaction_create' vendor.pk %}">add</a></tr>
+{% for l in vendor.transaction_set.all|dictsortreversed:"statement_date" %}
+<tr>
+  <td>{{ l.branch.name }}</td>
+  <td>{{l.receipt_date}}</td>
+  <td>{{l.transaction_date}}</td>
+  <td>{{l.statement_date}}</td>
+  <td>{{l.oldest_date}}</td>
+  <td>{{l.branch_id}}</td>
+  <td>{{l.description}}</td>
+  <td>{{l.cr_dr}}</td>
+  <td>{{l.amount}}</td>
+  <td><a href="{% url 'tr:transaction_edit' l.pk %}">modify</a></td>
+  <td><a href="{% url 'tr:transaction_delete' l.pk %}">delete</a></td>
+</tr>
+{% empty %}
+  <p>This vendor has no transactions, maybe.</p>
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}
+

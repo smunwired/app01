@@ -1,0 +1,34 @@
+{% block content %}
+
+<h1> {{ account }} </h1>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<h4>Transactions</h4>
+<tr><th>vendor<th>branch<th>frequency<th>type<th>receipt_date<th>tran date<th>statement<th>description<th><a href="{% url 'tr:transaction_create' %}">add</a></tr>
+{% for l in account.transaction_set.all %}
+<tr>
+  <td>{{ l.vendor.name }}</td>
+  <td>{{ l.branch.name }}</td>
+  <td>{{ l.frequency }}</td>
+  <td>{{ l.payment_type }}</td>
+  <td>{{l.receipt_date}}</td>
+  <td>{{l.transaction_date}}</td>
+  <td>{{l.statement_date}}</td>
+  {% if l.description %}
+    <td>{{l.description}}</td>
+  {% else %}
+    <td></td>
+  {% endif %}
+  <td>{{ l.signed_amount }}</td>
+  <td><a href="{% url 'tr:transaction_edit' l.pk %}">modify</a></td>
+  <td><a href="{% url 'tr:transaction_delete' l.pk %}">delete</a></td>
+</tr>
+{% empty %}
+  <p>This vendor has no transactions, maybe.</p>
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}
+

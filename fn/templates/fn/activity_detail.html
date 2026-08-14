@@ -1,0 +1,71 @@
+<html>
+ 
+<head>
+    <title>Bookings</title>
+    <style>
+        .container {
+            margin-left: 550px;
+            margin-top: 150px;
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1>Edit</h1>
+    <p style="margin-left:550px;"><a href="/bookings">Check data</a></p>
+    <div class="container">
+        <table>
+            <tbody>
+<!--                <form action="{{ object.id }}" method="POST">               -->
+                <form action="{{ action }}" method="POST">
+                        {% csrf_token %}
+                    <tr>
+                        <td>Booking</td>
+                        <td><input type="text" name="ref" value="{{ object.ref }}"></td>
+                    </tr>
+                    <tr>
+                        <td> Date Booked</td>
+                        <td><input type="text" name="dtb" value="{{object.dtb | date:"Y-m-d"}}"></td>
+                    </tr>
+                        <tr>
+                        <td> Time</td>
+                        <td><input type="text" name="tm" value="{{ object.tm | time:"H:i" }}"></td>
+                    </tr>
+                    <tr>
+                        <td> Distance</td>
+                        <td><input type="text" name="dst" value="{{object.dst}}"></td>
+                    </tr>
+                    <tr>
+                        <td> Average</td>
+                        <td><input type="text" name="av" value="{{object.av}}"></td>
+                    </tr>
+                    <tr>
+                        <td> Max Speed</td>
+                        <td><input type="text" name="mx" value="{{object.mx}}"></td>
+                    </tr>
+                    <tr>
+                        <td> Odometer</td>
+                        <td><input type="text" name="odo" value="{{object.odo}}"></td>
+                    </tr>
+                    <tr>
+                        <td> Route</td>
+                        <td><input type="text" name="route" value="{{object.route}}"></td>
+                    </tr>
+                    <tr>
+                        <td> Notes</td>
+                        <td><input type="text" name="notes" value="{{object.notes}}"></td>
+                    </tr>
+                    <tr>
+                        <td><button>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+</html>

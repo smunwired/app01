@@ -1,0 +1,92 @@
+<html>
+ 
+<head>
+    <title>Rides</title>
+    <style>
+        .row1 {
+            background: #EDF3FE;
+        }
+        .row2 {
+            background: white;
+        }
+        table {
+            margin-left: 50px;
+            margin-top: 15px;
+            column-width: 20px;
+            font-size: 12px;
+            border: 0;
+            padding: 15px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+ 
+<body>
+	<h1>Rides</h1>
+    <div class="container">
+<!--        <table border="5px solid #000;"> -->
+        <table border="0" padding="0px;">
+            <tbody>
+ 
+                <thead>
+                    <tr>
+			<th>bike</th>
+			<th>trip_date</th>
+			<th>time</th>
+			<th>distance</th>
+			<th>average</th>
+			<th>max_speed</th>
+			<th>odometer</th>
+			<th>route</th>
+			<th>notes</th>
+			<th><a href="{% url 'rides:ride_add' %}">Add</a></th>
+                    </tr>
+ 
+                </thead>
+            <tbody>
+                {% for i in object_list %}
+                <tr  class=" {% cycle "row1" "row2" %} " >
+                    <td>{{i.bike}}</td>
+                    <td>{{ i.dtr | date:"d-M-Y" }}</td>
+		    <td>{{ i.tm|time:"H:i" }}</td>
+                    <td>{{i.dst}}</td>
+                    <td>{{i.av}}</td>
+                    <td>{{i.mx}}</td>
+                    <td>{{i.odo}}</td>
+                    <td>{{i.route}}</td>
+                    <td>{{i.notes}}</td>
+		    <td><a href="{% url 'rides:ride_edit' i.pk %}">Edit</a></td>
+                    <td><a href="{% url 'rides:delete' i.pk %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+ 
+</html>

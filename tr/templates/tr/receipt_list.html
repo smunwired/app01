@@ -1,0 +1,94 @@
+<html>
+ 
+<head>
+    <title>Receipts</title>
+    <style>
+        .row1 {
+            background: #EDF3FE;
+        }
+        .row2 {
+            background: white;
+        }
+        table {
+            margin-left: 50px;
+            margin-top: 15px;
+            column-width: 20px;
+            font-size: 12px;
+            border: 0;
+            padding: 15px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+ 
+<body>
+
+    <div class="container">
+<!--        <table border="5px solid #000;"> -->
+        <table border="0" padding="0px;">
+            <tbody>
+ 
+                <thead>
+                    <tr>
+			<th>Vendor</th>
+			<th>Receipt</th>
+	                <th>Statement</th>
+	                <th>Transaction</th>
+			<th>Account</th>
+			<th>Payment Type</th>
+			<th>Tran Type</th>
+			<th>Description</th>
+			<th>amount</th>
+            		<th>Booking</th>
+			<th><a href="{% url 'receipts:receipt_add' %}">Add</a></th>
+                    </tr>
+ 
+                </thead>
+            <tbody>
+                {% for i in object_list %}
+                <tr  class=" {% cycle "row1" "row2" %} " >
+                    <td>{{i.vendor}} {{i.branch}}</td>
+                    <td>{{i.receipt_date}}</td>
+		    <td>{{i.statement_date}}</td>
+		    <td>{{i.transaction_date}}</td>
+		    <td>{{i.account}}</td>
+		    <td>{{i.payment_type}}</td>
+		    <td>{{i.tran_type}}</td>
+		    <td>{{i.receipt_description}}</td>
+		    <td>{{i.signed_amount}}</td>
+                    <td>{{i.booking}}</td>
+		    <td><a href="{% url 'receipts:receipt_edit' i.pk %}">Edit</a></td>
+                    <td><a href="{% url 'receipts:receipt_delete' i.pk %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+ 
+</html>

@@ -1,0 +1,58 @@
+<html>
+ 
+<head>
+    <title>Ride Points</title>
+    <style>
+        table {
+            margin-left: 50px;
+            margin-top: 150px;
+            column-width: 20px;
+            font-size: 12px;
+            border: 0;
+            padding: 15px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="container">
+<!--        <table border="5px solid #000;"> -->
+        <table border="0" padding="0px;">
+            <tbody>
+ 
+                <thead>
+                    <tr>
+			<th>ride</th>
+			<th>point</th><th>tm</th><th>dst</th><th>av</th><th>max</th><th>odo</th>
+			<th><a href="{% url 'rides:ridepoint_add' %}">Add</a></th>
+                    </tr>
+                </thead>
+            <tbody>
+                {% for i in ridepoints %}
+                <tr>
+                    <td style="padding:10px;">{{ i.ride }}</td>
+		            <td style="padding:10px;">{{ i.point }}</td>
+		            <td style="padding:10px;">{{ i.tm }}</td>
+		            <td style="padding:10px;">{{ i.dst }}</td>
+		            <td style="padding:10px;">{{ i.av }}</td>
+		            <td style="padding:10px;">{{ i.mx }}</td>
+		            <td style="padding:10px;">{{ i.odo }}</td>
+		            <td style="padding:10px;"><a href="{% url 'rides:ridepoint_edit' i.pk %}">Edit</a></td>
+                    <td style="padding:10px;"><a href="{% url 'rides:ridepoint_delete' i.pk %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+</html>

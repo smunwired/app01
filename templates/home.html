@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <ul>
+  <li><a href="ttl">artists/titles/images/listens</a> (ttl)
+  <li><a href="bk">bookings</a> (bk)
+  <li><a href="bikes">bikes</a>
+  <li><a href="rides">rides</a>
+  <li><a href="fn">fencing</a> (fn)
+  <li><a href="tr">transactions</a> (tr)
+  <li><a href="location">location</a>               django-smart-selects example
+  <li><a href="inv">inventory</a> (inv)
+  </ul>
+  <table>
+  <button type="submit">Log Out</button>
+</form>
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}

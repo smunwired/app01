@@ -1,0 +1,43 @@
+<html>
+ 
+<head>
+    <title>Points</title>
+    <style>
+        .container {
+            margin-left: 550px;
+            margin-top: 150px;
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1>Edit</h1>
+    <p style="margin-left:550px;"><a href="/points">Check data</a></p>
+    <div class="container">
+        <table>
+            <tbody>
+<!--                <form action="{{ object.id }}" method="POST">               -->
+                <form action="{{ action }}" method="POST">
+                        {% csrf_token %}
+                    <tr>
+                        <td> Short Name</td>
+                        <td><input type="text" name="short_name" value="{{object.short_name }}"></td>
+                    </tr>
+                    <tr>
+                        <td> Long Name</td>
+                        <td><input type="text" name="long_name" value="{{ object.long_name }}"></td>
+                    </tr>
+                    <tr>
+                        <td><button>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+</html>
