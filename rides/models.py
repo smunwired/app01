@@ -5,7 +5,7 @@ import datetime
 # Create your models here.
 
 class Ride(models.Model):
-    bike = models.ForeignKey(Bike, on_delete=models.PROTECT, default='5')
+    bike = models.ForeignKey(Bike, on_delete=models.PROTECT, default='9')
     dtr = models.DateField(default=datetime.date.today())
     tm = models.TimeField(null=True)
     dst = models.FloatField(null=True)
