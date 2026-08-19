@@ -1,0 +1,107 @@
+<html>
+ 
+<head>
+    <title>Images</title>
+    <style>
+        .row1 {
+            background: #EDF3FE;
+        }
+        .row2 {
+            background: white;
+        }
+        table {
+            margin-left: 50px;
+            margin-top: 15px;
+            column-width: 20px;
+            font-size: 12px;
+            border: 0;
+            padding: 15px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+        <h2>
+                <tr width="100%">
+                        <td><a href="{% url 'ttl:artist_list' %}">Artists</a></td>
+                        <td><a href="{% url 'ttl:title_list' %}">Titles</a></td>
+                        <td><b>Images</b></td>
+                        <td><a href="{% url 'ttl:listen_image_list' %}">Listens</a></td>
+                </tr>
+        </h2> 
+    <div class="container">
+<!--        <table border="5px solid #000;"> -->
+        <table border="0" padding="0px;">
+            <tbody>
+ 
+                <thead>
+                    <tr>
+			<th>alt</th>
+			<th>url</th>
+			<th>rendered</th>
+			<th><a href="{% url 'ttl:image_add' %}">Add</a></th>
+                    </tr>
+ 
+                </thead>
+            <tbody>
+		{% load static %}
+                {% for i in object_list %}
+                <tr  class=" {% cycle "row1" "row2" %} " >
+                    <td>{{ i.alt}}</td>
+		    {% if i.title_image %}
+		    	<td><img src=" {% static 'ttl/' %}{{ i.title_image }}" width="20" height="20" >static</td>
+		    {% elif i.url %}
+		    <td><img src="{{ i.url }}" width="20" height="20" >http</td>
+		    {% else %}
+		    <td>no image found</td>
+		    {% endif %} 
+                    <td>{{ i.url}}</td>
+		    {% if i.url %} 
+		    <!-- works for static file -->
+		    <td><img src=" {% static 'ttl/' %}{{ i.url }}" width="20" height="20" ></td>
+		    <!-- works for web url -->
+		    <td><img src="{{ i.url }}" width="20" height="20" ></td>
+		    {% endif %} 
+		    <td>
+			    {% if i.title_image %} 
+			    <table>
+				    <tr><td>    {{ i.title_image.url }}						</td></tr> 
+			    </table>
+			    {% endif %} 
+		    </td>
+		    <td><a href="{% url 'ttl:title_detail' i.title_id %}">Titles</a></td>
+		    <td><a href="{% url 'ttl:image_edit' i.pk %}">Edit</a></td>
+                    <td><a href="{% url 'ttl:image_delete' i.pk %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+ 
+</html>

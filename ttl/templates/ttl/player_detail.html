@@ -1,0 +1,90 @@
+{% block content %}
+
+<h1> {{ player.name }} </h1>
+<h2>{{ title }}</h2>
+	<h1>{{ owner.name }}</h1>
+
+<div style="margin-left:20px;margin-top:20px">
+<h2>Template:Team_Detail</h2>
+<table>
+	<tr>
+		<th>Player
+		<th><a href="{% url 'mgr:player_edit' %}">add</a>
+	</tr>
+	<tr><td>{{ player.name }}</td></tr>
+{% for l in owner.team_set.all %}
+  <tr><td>{{l.name}}</td>
+  <td><a href="{% url 'mgr:team_detail' l.pk %}">detail</a></td>
+</tr>  
+{% empty %}
+  <p>This title has no teams.</p>
+{% endfor %}
+</table>
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<th><h4>Media</h4><th><a href="{% url 'ttl:medium_add' %}">add</a></tr>
+{% for l in title.medium_set.all %}
+  <tr><td>{{l.type}}</td>
+  <td>{{l.release_year}}</td>
+  <td>{{l.label}}</td>
+  <td><a href="{% url 'ttl:listen_delete' l.pk %}">delete</a></td>
+</tr>  
+{% empty %}
+  <p>This title has no media.</p>
+{% endfor %}
+</table>
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<th><h4>Listens</h4><th><a href="{% url 'ttl:listen_add' %}">add</a></tr>
+{% for l in title.listen_set.all|dictsortreversed:"listen_date" %}
+  <tr><td>{{l.listen_date}}</td>
+  <td><a href="{% url 'ttl:listen_edit' l.pk %}">edit</a></td>
+  <td><a href="{% url 'ttl:listen_delete' l.pk %}">delete</a></td>
+</tr>  
+{% empty %}
+  <p>This title has no listens.</p>
+{% endfor %}
+</table>
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<th><h4>Images</h4><th><a href="{% url 'ttl:image_add' %}">add</a></tr>
+{% for l in title.image_set.all %}
+  <tr>
+      	<td>{{l.alt}}</td>
+	<td width="100">{{l.url}}</td>
+      	<td><img src="{{l.url}}" height="100" width="100" alt="{{ i.alt }}"/></td>
+      	<td><a href="{% url 'ttl:image_edit' l.pk %}">edit</a></td>
+      	<td><a href="{% url 'ttl:image_delete' l.pk %}">delete</a></td>
+  </tr>  
+{% empty %}
+  <p>This title has no images.</p>
+{% endfor %}
+</table>
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<th><h4>Headings</h4><th><a href="{% url 'ttl:heading_add' %}">add</a></tr>
+{% for l in title.title_heading_set.all %}
+  <tr>
+      	<td>{{l.alt}}</td>
+	<td width="100">{{l.heading_id}}</td>
+      	<td><img src="{{l.url}}" height="100" width="100" alt="{{ i.alt }}"/></td>
+      	<td><a href="{% url 'ttl:heading_edit' l.pk %}">edit</a></td>
+      	<td><a href="{% url 'ttl:heading_delete' l.pk %}">delete</a></td>
+  </tr>  
+{% empty %}
+  <p>This title has no headings.</p>
+{% endfor %}
+</table>
+</div>
+
+
+{% endblock %}
+

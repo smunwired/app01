@@ -1,0 +1,43 @@
+from django.urls import path
+from . import views
+from django.urls import re_path as url
+
+app_name = "ttl"
+urlpatterns = [
+    path('/artists',views.ArtistList.as_view(),name="artist_list"),
+    path('/artists/<str:startswith>',views.ArtistListStartswith.as_view(),name="artist_list_startswith"),
+    path('/artist/add',views.ArtistAdd.as_view(),name="artist_add"),
+    path('artist/<pk>',views.ArtistDetail.as_view(),name="artist_detail"),
+    path('/artist/edit/<pk>',views.ArtistUpdate.as_view(),name='artist_edit'),
+    path('artist/delete/<pk>',views.ArtistDelete.as_view(),name='artist_delete'),
+    path('/artist/<int:artist_id>/title/add',views.ArtistTitleAdd.as_view(),name='artist_title_add'),
+#    path('artist/<int:artist>/title/add',views.TitleAdd.as_view(),name='artist_title_add'),
+#    path('artist/<pk>/title/add',views.TitleAdd.as_view(),name='artist_title_add'),
+    path('/titles',views.TitleList.as_view(),name="title_list"),
+    path('/titles/<str:startswith>',views.TitleListStartswith.as_view(),name="title_list_startswith"),
+    path('/title/add',views.TitleAdd.as_view(),name='title_add'),
+    path('/title/<int:title_id>/image/add',views.TitleImageAdd.as_view(),name="title_image_add"),
+    path('/title/<int:title_id>/listen/add',views.TitleListenAdd.as_view(),name="title_listen_add"),
+    path('/title/<pk>',views.TitleDetail.as_view(),name="title_detail"),
+    path('/title/edit/<pk>',views.TitleUpdate.as_view(),name='title_edit'),
+    path('/title/delete/<pk>',views.ImageDelete.as_view(),name='title_delete'),
+    path('/listens',views.ListenList.as_view(),name="listen_list"),
+    path('/listensmg',views.ListenImageList.as_view(),name="listen_image_list"),
+    path('',views.ListenImageList.as_view(),name="listen_image_list"),
+    path('/listen/add',views.ListenAdd.as_view(),name='listen_add'),
+    path('/listen/<pk>',views.ListenDetail.as_view(),name="listen_detail"),
+    path('/listen/edit/<pk>',views.ListenUpdate.as_view(),name='listen_edit'),
+    path('/listen/delete/<pk>',views.ListenDelete.as_view(),name="listen_delete"),
+    path('/title_media',views.TitleMediumList.as_view(),name='title_medium_list'),
+    path('/title_medium/add',views.TitleMediumAdd.as_view(),name='title_medium_add'),
+    path('/title_medium/edit/<pk>',views.TitleMediumUpdate.as_view(),name='title_medium_edit'),
+    path('/title_medium/delete/<pk>',views.TitleMediumDelete.as_view(),name='title_medium_delete'),
+    path('/images/list',views.ImageList.as_view(),name="image_list"),
+    path('/images/oldlist',views.ImageListOld.as_view(),name="title_image_list_old"),
+    path('/images',views.ImageList.as_view(),name="title_image_list"),
+    path('/images/<str:startswith>',views.ImageListStartswith.as_view(),name="image_list_startswith"),
+    path('/image/add',views.ImageAdd.as_view(),name='image_add'),
+    path('/image/<pk>',views.ImageUpdate.as_view(),name='image_detail'),
+    path('/image/edit/<pk>',views.ImageUpdate.as_view(),name='image_edit'),
+    path('/image/delete/<pk>',views.ImageDelete.as_view(),name='image_delete'),
+]

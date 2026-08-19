@@ -1,0 +1,19 @@
+{% block content %}
+<h1> {{ artist.name }} </h1>
+
+<div style="margin-left:20px;margin-top:20px">
+<h2>Titles</h2>
+<a href="{% url 'ttl:title_add' %}">add</a>
+<table>
+{% for l in artist.title_set.all|dictsort:"first_released" %}
+<tr><td>{{l.prefix_name}} {{l.indexed_name}}</td><td>{{l.first_released}}</td>
+  <td><a href="{% url 'ttl:title_detail' l.pk %}">detail</a></td>
+</tr>  
+{% empty %}
+  <p>This artist has no titles.</p>
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}
+

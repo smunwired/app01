@@ -1,0 +1,87 @@
+<html>
+ 
+<head>
+    <title>Listens</title>
+    <style>
+        .row1 {
+            background: #EDF3FE;
+        }
+        .row2 {
+            background: white;
+        }
+        table {
+            margin-left: 50px;
+            margin-top: 15px;
+            column-width: 20px;
+            font-size: 12px;
+            border: 0;
+            padding: 15px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+ 
+<body>
+	<h2>
+                <tr width="100%">
+                        <td><a href="{% url 'ttl:artist_list' %}">Artists</a></td>
+                        <td><a href="{% url 'ttl:title_list' %}">Titles</a></td>
+                        <td><a href="{% url 'ttl:image_list' %}">Images</a></td>
+                        <td><b>Listens</b></td>
+                </tr>
+        </h2>
+
+    <div class="container">
+<!--        <table border="5px solid #000;"> -->
+        <table border="0" padding="0px;">
+            <tbody>
+ 
+                <thead>
+                    <tr>
+			    <th>listen date</th><th>title<th>title<th>image<a href="{% url 'ttl:listen_add' %}">add</a>
+                    </tr>
+ 
+                </thead>
+            <tbody>
+                {% for i in object_list|dictsortreversed:"listen_date" %}
+                <tr  class=" {% cycle "row1" "row2" %} " >
+		    <td>{{ i.listen_date }}</td>
+		    <td>{{ i.title.get_title }}</td>
+		    <td>{{ i.title.image.url }}</td>
+		    <td><a href="{% url 'ttl:title_detail' i.title_id %}">title</a></td>
+		    <td><a href="{% url 'ttl:listen_edit' i.id %}">edit</a></td>
+		    <td><a href="{% url 'ttl:listen_delete' i.id %}">delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    <div><a href="{% url 'fn:activity_list' %}">Activity</a></div>
+</body>
+ 
+</html>

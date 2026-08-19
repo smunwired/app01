@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 #    'bk',
     'fn',
 #    'mv',
-#    'ttl',
+    'ttl',
 #    'inv',
 #    'map',
 #    'smart_selects',

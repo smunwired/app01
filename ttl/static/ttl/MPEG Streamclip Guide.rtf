@@ -1,0 +1,918 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf420
+{\fonttbl\f0\fswiss\fcharset77 Arial-BoldMS;\f1\fswiss\fcharset77 ArialMS;\f2\fswiss\fcharset77 Helvetica-Bold;
+\f3\fswiss\fcharset77 Arial-BoldItalicMS;\f4\fnil\fcharset78 HiraKakuPro-W3;\f5\fswiss\fcharset77 Helvetica;
+\f6\fswiss\fcharset77 Arial-ItalicMS;\f7\fswiss\fcharset77 Helvetica-Oblique;\f8\fnil\fcharset77 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\vieww10660\viewh13360\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f0\b\fs36 \cf0 MPEG Streamclip 1.1 for Windows XP\
+Copyright \'a9 2006 Squared 5\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f1\b0\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f0\b\fs26 \cf0 HIGH-QUALITY CONVERTER FOR MPEG-1/MPEG-2 FILES AND TRANSPORT STREAMS WITH PLAYER AND EDITING SUPPORT, SUITABLE FOR MPEG-2 CAMCORDERS, DVD AND DVHS RECORDERS, DVB SET-TOP BOXES; COMPATIBLE WITH MANY AUTHORING APPLICATIONS.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f2 \cf0 NOW CAN MAKE, EXPORT AND EDIT DIVX MOVIES; IMPROVED iPOD EXPORT FROM AVI, DIVX, MPEG; VIDEO FILE DOWNLOAD.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f0 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\f3\i\fs24 \cf0 Requirements: Windows XP (not tested yet but expected to work with Windows Vista as well); KL QuickTime Alternative 1.61 and later, or Apple QuickTime 7 and later. For MPEG-2, install QuickTime Alternative with the Extra QuickTime plugins.\
+\
+To make/edit/export DivX movies you have to install the 3ivx codec (www.3ivx.com). And make sure you have installed Windows Media Player 10 or higher.
+\f1\i0\b0\fs26 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\fs28 \cf0 http://www.squared5.com\
+squared5
+\f4 @
+\f1 mpeg-streamclip.com\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc
+
+\fs26 \cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b\fs24 \cf0 COPYRIGHT\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 This software has been written by Squared 5 in Italy. All the code used in this application is absolutely original, including the AC3 decoder
+\f5 , and the powerful tools for the DreamBox
+\f1 . No third party code has been used in this application, even when suitable open source code was freely available. And the design of this software is also original; no third party applications have been reverse engineered to make MPEG Streamclip work. This application works just because it's well written, and works well because it does not make use of recycled source code.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 \
+NEW IN VERSION 1.1\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5\b0 \cf0 This version greatly improves AVI and DivX playback/conversion/editing/encoding. Also adds compatibility with the new video iPods and the DivX <-> iPod conversion.\
+\
+Batch processing is now possible. A new menu "List" lets you open the Batch List, to make batch conversion, and also the Edit List, to look at the cuts you have made to the stream. More details later in this guide.\
+Some useful navigation buttons have been added in the player.\
+If you own a DreamBox, the new Enigma menu lets you connect to your DreamBox set-top box directly. For details, see the section "Using MPEG Streamclip with the DreamBox".\
+\
+A new command "Open URL" can open movies directly from a web server. The Open URL command of the File menu, can now open and also download (or batch download) streams over the Internet, and it often recognizes and opens movies embedded in web pages. More details later in this guide.\
+Compatibility with the iPod has been improved, and more H.264 presets are now available in the MPEG-4 Exporter. New iPod presets have been added, to support 16:9 movies; the last preset can be used for cellphones as well. The two-pass encoding is now iPod-compatible.\
+MPEG Streamclip can now make DivX files with MP3 (MPEG Layer 3) audio, if 3ivx and Windows Media Player 10 or higher are installed in your PC.\
+The "Save as" command for AVI files has been significantly improved: it is faster, and can now handle B-frames properly. Other improvements in the AVI exporter include proper encoding of AVI files with BMP and JPEG video, "lower" dominance for 3ivx, and a special frame size called "720x576 DivX PAL" that appear in place of "720x576 DV-PAL", when the 3ivx codec is used.\
+An internal AVI importer and two internal AC3 and MP2 decoders have been added; this lets you play and convert AVI and DivX files with MP2, MP3 and AC3 sound.\
+An internal high-quality audio resampler (aka sample rate converter) has been added, for better sound quality.\
+Fixed many bugs, including: a bug in which the last few seconds of the audio track were not exported; a bug in which the video compressor used was sometimes different from the video compressor chosen; a bug in which the picture became darker/brighter when exporting with the same compressor; a bug in which the frame rate was not detected properly.\
+Added support for MPEG-1 video in transport streams and in VOB files.\
+In the exporter window, you can now rotate the picture by 90 and 180 degrees; you can make fast start QuickTime movies; an estimate of the final movie size appears when you enable "Limit Data Rate".\
+The "Fix Timecode Breaks" command has been further improved with a new option, so it will not skip frames in VOB files. Moreover it has been modified to minimize the amount of audio dropouts in VOB files.\
+Added a button "Open Anyway" in the open file error message; with this button you can try to open unrecognized file types.\
+The keyframe interval for export has been increased from 1 second to 5 seconds.\
+Added support for the 16:9 PAL format of the JVC Everio video camera.\
+Added support for the following file formats: DCM (Sony), TP, VID (Homecast), JPEG, TIFF.\
+In the frame exporter, you can now choose the picture format between JPEG, TIFF, PNG, and make adjustments to the picture.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 \
+OVERVIEW OF MPEG STREAMCLIP\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 MPEG Streamclip is a converter, an exporter, a player, an editor, a downloader.\
+\
+It can open many file formats: muxed files MPEG, MPG, VOB, PS, M2P, MOD, VRO, DAT, DCM, VDR, PVR; transport streams TS, M2T, MTS, MMV, REC, VID, AUD, AVR, TP, TP0, TRP; demuxed files M2V, M1V, MPV, AIFF, AIF, M1A, MP2, MPA, AC3; QuickTime-compatible files MOV, DV, AVI, MP4, DIVX; pictures TIFF, JPEG;\
+\
+MPEG Streamclip supports MPEG-1 video, MPEG layer 1/2 audio, AC3/A52 audio and PCM audio. MPEG-2 video is supported if you have QuickTime Alternative ($0) and you chose to install the Extra QuickTime plugins.\
+If you have Apple QuickTime, and do not want to replace it with QuickTime Alternative, you can buy the MPEG-2 Playback Component ($19.99) from Apple Computer.\
+To open or encode DivX files, you have to install 3ivx for Windows ($0), and update Windows Media Player to version 10 or higher. Audio playback/conversion for DivX is supported now.\
+\
+Converter features:\
+\'d0 from MPEG, MPG, VOB, PS, M2P, MOD, VRO, DAT, TS, M2T, MMV, REC, VID, AVR\
+	to MPEG, TS, REC, VID, M2V, AIFF, MPA, AC3\
+\'d0 multiplexing of M2V, M1V, MPV files with AIFF, M1A, MP2, MPA, AC3 files\
+	to MPEG, TS, REC, VID, M2V, AIFF, MPA, AC3\
+	(just open the M2V or M1V file, and the audio file with the same name will be multiplexed on the fly).\
+\'d0 very fast, no loss of video quality, perfect audio/video sync\
+\'d0 compatible with DVD authoring applications\
+\'d0 special Headed format to import unsupported frame sizes in DVD authoring applications\
+\'d0 special Unscaled demuxed files, for the QuickTime Pro media authoring application\
+\'d0 can automatically join multiple VOB or TS files\
+\'d0 manual command to scan the stream and fix timecode breaks\
+
+\f5 \'d0 batch conversion\
+
+\f1 \
+Exporter features:\
+\'d0 from MOV, DV, AVI, DIVX, MP4, MPEG, MPG, VOB, PS, M2P, MOD, VRO, DAT, TS, M2T, MMV, REC, VID, AVR, M2V\
+	to MOV, DV, AVI, DIVX, MP4\
+\'d0 supports any QuickTime-compatible video codec available for Windows, and many audio formats\
+\'d0 very high quality encoding, all in YUV color space, either unscaled or with 2D-FIR scaling (better than bicubic)\
+\'d0 motion-adaptive deinterlacing and chroma reinterlacing, with perfect audio/video sync\
+
+\f5 \'d0 internal high-quality audio resampler\
+\'d0 batch export\
+
+\f1 \
+Player features:\
+\'d0 playback of QuickTime-compatible files\
+\'d0 playback of muxed/demuxed MPEG/VOB files and transport streams with MPEG, AC3, PCM/AIFF audio\
+\'d0 playback of MPEG files larger than 4GB, or segmented in many files\
+\'d0 support for multiple audio tracks in transport streams and MPEG/VOB files\
+\'d0 full screen playback, zoom with arrow keys\
+\
+Editor features:\
+\'d0 cut/copy/paste of MPEG files and transport streams, at keyframe (GOP) level\
+\'d0 frame accurate cut/copy/paste of QuickTime files\
+\'d0 trimming function, with unique "revert trimming" feature\
+\'d0 access to keyframes with arrow keys\
+
+\f5 \'d0 edit list\
+
+\f1 \
+Downloader features:\
+\'d0 playback and download of AVI, DIVX, MOV, MP4 files directly over the Internet\
+\'d0 in some cases, playback and download of video files by entering the address of the web page in which the file is embedded\
+\'d0 editing before saving the movie to disk\
+\'d0 batch download\
+\
+And many more features are available!\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 IF YOUR FILE DOESN'T GET CONVERTED...\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 Please send a mail to Squared 5. The best way to help Squared 5 in improving MPEG Streamclip is, of course, making small samples of your files available (1 MB is usually enough). The preferred way is uploading samples to a web site. The MPEG file must not contain any personal information.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\fs28 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b\fs24 \cf0 SETTING PREFERENCES
+\f3\i \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\i0\b0 \cf0 You can open the preferences window of MPEG Streamclip by choosing "Preferences..." from the Window menu. Preferences are stored on disk and you won't lose them when you quit MPEG Streamclip (presets are also stored on disk, but other settings are not). You can set the following options:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+\cf0 \ul \ulc0 Fix streams with data breaks\ulnone \
+When checked, this option enables a special stream processing, in order to repair audio and video and recover audio/video synchronization in streams that present data breaks. It works when you use Export, Convert, Demux. This option makes the conversion a little bit slower, however you would better enable it when you are converting transport streams from TV broadcastings or digital video tapes.\
+\
+\ul Fast decoding of data breaks\ulnone \
+When a transport stream has many data breaks, exporting it may take forever. With this option you can speed up decoding of data breaks and make export faster. This option has effect only on transport streams, not with other MPEG files: if you have a muxed MPEG file with many data breaks and you want to export it quickly, you can convert it in a transport stream using "Convert to TS...", then open the TS file, enable this option and export it. \
+\
+\ul Don't open preview when exporting
+\f6\i \ulnone \
+
+\f1\i0 Does not open the preview window when exporting to QuickTime, DV, AVI. This speeds up conversion by about 1%. Anyway, you can open and close the preview window at any time, while and after exporting, with "Exporter Preview" from the Window menu and "Close" from the File menu.\
+\
+\ul Preview all frames
+\f6\i \ulnone \
+
+\f1\i0 When this option is enabled, and you click "Preview", the exporter preview shows all encoded frames; when disabled, only some sample frames (typically, keyframes) are shown in the preview window. But when you click "Make" to export a file, only sample frames are shown regardless of this setting.\
+\
+\ul MP2 Encoding Bitrate\ulnone \
+Sets the bitrate used for MP2 (MPA) encoding, it affects the commands "Convert to MPEG with MP2 Audio", "Demux to M2V and MPA", "Demux to MPA", "Demux to Headed M2V and MPA". It has no effect on the audio bitrate setting of the export window.\
+\
+\ul Play streams with "user data"\ulnone \
+Some broadcasted transport streams (especially from CanalSatellite France) have junk "user data" that may prevent playback. But if you enable this option and reopen the stream, user data will be overwritten and you will be able to play and convert it without problems. This setting has effect only on transport streams; please enable it only if you have this problem.\
+\
+\ul Clear "composite display flag"\
+\ulnone A very advanced setting, it makes a small change in the stream to fix a possible compatibility issue with some DVD players that use the Zoran chipset. Do not enable this option, unless you have one of these DVD players and you are experiencing small green squares during playback.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 \ul \
+AVI Settings\ulnone \
+These advanced settings change the way AVI files are saved and exported. "Slow rendering" will improve the rendering quality of cuts when saving an edited AVI file back to AVI using "Save As..." (every cut must be encoded again when saving as AVI); but it has no effect on "Export to AVI...".\
+On the other hand, "VBR Audio" affects both "Save As..." and "Export to AVI..."; using VBR (Variable Bit Rate) audio can improve A/V sync of some files but it may be incompatible with some players.\
+\
+\ul DreamBox Settings\ulnone \
+These setting are reserved for the owners of DreamBox. Please do not change these settings unless you have this set-top boxes.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 \
+OPENING STREAM FILES\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 Choose "Open Files" from the File menu, select one or more source files and click Open.\
+If you want to open audio files you have to choose "Audio" in the pop-up menu below.\
+You can select files with the following extensions: (Video) 
+\f5 .ts, .ps, .vob, .vro, .dat, .vdr, .pvr, .rec, .mpeg, .mpg, .m2p, .m2t, .mts, .m2v, .m1v, .mpv, .mmv, .mod, .vid, .avr, .dcm, .tp, .tp0, .trp, .mov, .dv, .avi, .mp4, .m4v, .divx, .jpeg, .jpg, .tiff, .tif
+\f1 ; (Audio) 
+\f5 .aiff, .aif, .m1a, .m2a, .mp2, .mpa, .ac3, .aud
+\f1 .\
+If your MPEG file comes with an unsupported extension, you can choose "All Files" in the pop-up menu and try to open it.\
+For .m2v, .m1v, .mpv video files, if a valid audio file with the same name and the .aiff, .aif, .m1a, .mp2, mpa, .ac3 extension exists, it will be opened together with the video file. If more than one audio file with a valid extension exists, the first will be opened using the above search order (that is, .aiff first, .ac3 last). Opening a demuxed video or audio file may take time
+\f5 ; a progress indicator appears and you can stop the process with Esc.\
+
+\f1 \
+
+\f6\i AIFF audio files must be 16-bit uncompressed big-endian and have a supported sample rate. \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5\i0 \cf0 Alternatively, drag & drop any supported file over the application icon. This is valid for single video files only; if you drag multiple files, only one of them will be opened. To open multiple files together, always use the File menu.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f6\i \cf0 \
+If you select more than one file, please make sure that all selected files are part of a single MPEG stream (perhaps larger than 1GB), and that they are in alphabetical order. If not, please rename the files so that they are in alphabetical order. Note that the display order or the selection order is not relevant; only alphabetical order will matter. This behavior is new in version 1.1: previous versions did not open the files in the wanted order in most cases.\
+\
+
+\f1\i0 If you select just one file and it is clear that the file is part of a longer MPEG stream, this application gives you the option to open all the files of the stream together. Examples are: VTS_01_1.VOB + VTS_01_2.VOB (DVD);\
+Recording.ts + Recording.ts.001 (DreamBox);\
+Movie_0501220105~0.vid + Movie_0501220105~1.vid (Humax).
+\f6\i \
+\
+Please contact Squared 5 if your device splits MPEG files using a different pattern.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\i0\b \cf0 \
+OPENING A STREAM OVER THE INTERNET\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5\b0 \cf0 Choose "Open URL" from the File menu, enter the URL address of the stream, click "Open" and, if recognized, the stream will be opened in the player.\
+\
+In some cases, you can also enter the URL address of a web page, and MPEG Streamclip will try to open the video stream that's embedded in that page.\
+\
+There are two options in the "Open URL" window: "Open as streamed file", and "Open as remote file"; they determine the way in which the stream will be opened. You can use "Open as streamed file" (the default) or read the following information to find out which mode to use. Note that if you select "Open as streamed file" and it fails, MPEG Streamclip will also retry with "Open as remote file" before giving up.\
+\
+The "Open as streamed file" opens the stream as a sequential file with the progressive download method. The connection is controlled by QuickTime; data are cached on disk. It works with several streaming and downloading protocols, not only HTTP, but it does not allow you to seek beyond the current downloading point, and it will not work with some file types. Moreover, MPEG files opened with "Open as streamed file" will convert without sound.\
+\
+The "Open as remote file" opens the stream as a remote random-access file. The connection is controlled by MPEG Streamclip; data are cached in RAM. It works only for HTTP streams (beginning with "http:") and it allows you to seek without waiting. Good for AVI files; however in this mode the player may hang for several seconds when you play the stream and your connection is too slow.\
+\
+WMV and FLV streams are not supported yet in MPEG Streamclip for Windows, so you cannot use "Open URL" to play these files.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\b \cf0 DOWNLOADING A STREAM\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5\b0 \cf0 Choose "Open URL" from the File menu, enter the URL address of the stream, click "Download\'c9" and, if recognized, the stream will be downloaded to disk. If the batch list is open, the task will be added to the batch list, and you can start downloading the stream later.\
+\
+In some cases, you can also enter the URL address of a web page, and MPEG Streamclip will try to download the video stream that's embedded in that page. At the time of this writing, this feature works with YouTube videos and Google videos, but there is no guarantee it will work in the future. Moreover, you cannot use MPEG Streamclip to play YouTube and Google videos because they are in FLV format, and this format is not yet supported.\
+\
+The "Open as streamed file" and "Open as remote file" options also apply to download. Please choose the proper option, or use the default "Open as streamed file".
+\f2\b \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f6\i\b0 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\i0\b \cf0 READING STREAM INFO
+\f3\i \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\i0\b0 \cf0 You can open an info window for the current stream using "Show Stream Info" from the File menu. All relevant data are reported in this window.\
+The "Video PID" pop-up menu lists, for MPEG files, the available video tracks and the "Audio PID" lists the available audio tracks; only the selected video and audio track will be converted.\
+The two times under "Trimming" indicate the portion of the movie shown in the player: they change when you trim the movie. The "In" and "Out" times indicate the portion of the stream to be saved, exported or converted: they represent the current selection.\
+\
+
+\f6\i Scrambled or encrypted streams are not supported. If you open these files, you may get unpredictable results. However, if a stream is just partially scrambled, this application attempts to find a portion of the stream which is not scrambled; if it succeeds, the Readable Size will be shown in the info window.\
+
+\f1\i0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 CHOOSING AUDIO AND VIDEO PIDS
+\f1\b0 \
+A single MPEG stream can deliver more than one video and one audio track (e.g. more than one language). A single video or audio track (also called elementary stream) is identified by a number called PID (Packet IDentifier) which is unique to that track.\
+Before playing a stream or doing a conversion, you should select the proper audio and video PIDs, using the two pop-up menus, to specify the audio and video track to play or include in the destination file; otherwise, two default PIDs will be chosen for you.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f6\i \cf0 Muxed MPEG files, unlike transport streams, have no PIDs but may still have more audio and video tracks, each identified by a different "start code". For muxed files, the PID menus will show the start code of each available video and audio track.\
+
+\f1\i0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 AUDIO MODES AND MULTICHANNEL AC3\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 AC3 audio tracks support up to 6 different channels (L, R, Center, LS, RS, LFE) but MPEG Streamclip can only play/convert two channels at a time. Using the "Audio Mode" pop-up menu you can choose the two channels to be used. If you have no special needs, you can use the default audio mode (Stereo Mix); otherwise, keep on reading for more detailed info.\
+\
+
+\f6\i Stereo Mix
+\f1\i0 \
+Makes a mix of L, R, Center (the 3 front channels) plus LS and RS (the 2 surround channels), it takes the mixing coefficients from the AC3 stream and produces a stereo sound in conformance to the A52 standard. The LFE channel is not included.\
+Note that for AC3 2/0 (see below) this and the 3 following modes just pass the L and R channels unchanged.\
+\
+
+\f6\i Front Mix
+\f1\i0 \
+It is the same as Stereo Mix, but it excludes LS and RS (the two surround channels) from the mix. Use it when the surround channels have bad sound.\
+If the surround channels are not present, or were already excluded from the Stereo Mix (due to a zero mixing coefficient from the AC3 stream) then Front Mix produces the same sound as Stereo Mix.\
+\
+
+\f6\i Surround
+\f1\i0 \
+Makes a Dolby Surround-compatible stereo sound. Using this special stereo sound, a Dolby Pro Logic amplifier with 6 speakers (5+1 subwoofer) may be able to reconstruct and play all the 6 channels of AC3.\
+Use this mode only if your audio equipment has a Pro Logic decoder and can handle Dolby Surround.\
+\
+
+\f6\i L/R Ch.
+\f1\i0 \
+Lets you play and extract the L and R channels as a stereo pair. All other channels are excluded. If both L and R channels are missing, the Center channel is used instead.\
+\
+
+\f6\i Center Ch.
+\f1\i0 \
+Lets you play and extract the Center channel. All other channels are excluded. If the Center channel is missing, a mono mix of L and R is used instead.\
+\
+
+\f6\i LS/RS Ch.
+\f1\i0 \
+Lets you play and extract the LS and RS (surround) channels as a stereo pair. All other channels are excluded. If LS and RS are missing but exists a S (center surround) channel, this channel is used instead. If LS, RS and S are all missing, the sound will mute.\
+\
+
+\f6\i LFE Ch.
+\f1\i0 \
+Lets you play and extract the LFE (low frequency effects) channel, used to drive a subwoofer. This channel is optional even in AC3 3/2; if it's missing, the sound will mute.\
+\
+
+\f6\i You can use the last 4 modes to make 4 AIFF files holding all the content of the AC3 track.\
+
+\f1\i0 \
+The number of channels that are present in an AC3 stream can be deduced from the AC3 coding mode (shown using two digits separated by a slash or a plus sign). This is a list of all AC3 coding modes with their channels:\
+\'d0 AC3 1/0: Center (mono)\
+\'d0 AC3 1+1: L, R (dual mono)\
+\'d0 AC3 2/0: L, R (stereo)\
+\'d0 AC3 3/0: L, R, Center (3 front channels)\
+\'d0 AC3 2/1: L, R, S (stereo + 1 surround)\
+\'d0 AC3 3/1: L, R, Center, S (3 front + 1 surround)\
+\'d0 AC3 2/2: L, R, LS, RS (stereo + 2 surround)\
+\'d0 AC3 3/2: L, R, Center, LS, RS (3 front + 2 surround)\
+Note that the LFE channel may be optionally present in all of these AC3 modes.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 AUDIO MODES AND MPEG AUDIO
+\f1\b0 \
+For MPEG audio tracks (MP1, MP2) two different audio levels are available for playback and conversion to MOV, DV, AVI, MP4 and AIFF: "High Level" and "Low Level". You can choose one of these two levels using the "Audio Mode" pop-up menu. The default level is "High Level". Use "Low Level" if, and only if, the converted movie or AIFF file shows an excess of volume.\
+\
+
+\f0\b MAKING A SELECTION\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 The selection is the part of the movie included between the In and Out points.\
+You can set the In and Out points, and therefore make a selection, in one of these alternative ways:\
+\'d0 drag the playhead (from In to Out or from Out to In) while holding down the Shift key;\
+\'d0 move the playhead to the In (or Out) point, then hold down the Shift key and move the playhead to the Out (or In) point;\
+\'d0 move the playhead to the In point and hit the I key, then move the playhead to the Out point and hit the O key.\
+The selection will be highlighted in the player.\
+To cancel a selection, you can use the X key, or choose "Cancel Selection" in the Edit menu. Remember these commands because there is no other way to cancel a selection.\
+Please note that, while the In point is included in the selection, the Out point is not included.\
+\
+
+\f6\i You can also move the playhead to the desired In and Out points using JKL navigation (an explanation of JKL navigation can be found later in the section "Playing the stream"), and use the left and right arrow keys to step the playhead through single frames, or the up and down arrow keys to step through keyframes. If you hold down the Alt key, you can use the left and right arrow keys to jump directly to the In and Out times.\
+
+\f1\i0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 TRIMMING THE STREAM
+\f1\b0 \
+Once you have made a selection, you may choose to trim the selected portion, temporarily cutting away anything before the In point and after the Out point. Use "Trim" from the Edit menu, and the movie will be trimmed to the selected portion (or something less, according to keyframe positions); you can then perform further (and finer) selections. "Trim" does not affect source files in any way.\
+If you want to undo the last trimming operation, you can use "Undo" from the Edit menu. If you want to undo all trimming operations you've done, you can use "Revert Trimming" from the Edit menu.\
+\
+Trimming is not part of movie editing; it's just a way to temporarily restrict the part of the stream shown in the player and available for conversion and editing. You can use trimming without worries since you can revert it at any time without losing any editing you may have done to the stream. Also if you edit a part of the stream and then trim that part away, editing is not lost but just hidden; you can get it back at any time if you use "Revert Trimming".\
+\
+So you can take advantage of trimming to make fine editing on smaller parts of the stream. E.g. with a long stream, you can select and trim the first 20 minutes, cut commercials, then revert trimming, select and trim the next 20 minutes, cut commercials, revert trimming and so on.\
+\
+
+\f0\b EDITING THE STREAM
+\f1\b0 \
+Using "Cut" from the Edit menu, you can remove the selected portion of the stream (from In to Out; or something more, according to keyframe positions). This is useful if you want to remove commercials from the stream. You can make any number of cuts you want, and even cut a part that already contains one or more cuts.\
+You can locate each cut using the edit list (read "Using the edit list" below for more details).\
+\
+With "Copy" and "Paste" you can copy a part of the stream and paste it in the same stream or in another compatible stream. You can also use "Cut" and "Paste" to move a portion of the stream. The part of the stream copied with "Copy" is, like for "Cut", the selection from In to Out (or something more); if there is no selection, "Copy" does a copy of the whole stream (if you trimmed the stream, only the trimmed part will be copied).\
+The part of stream copied with "Copy" or "Cut" is preserved when you close the stream, so you can use "Copy", close the stream, open another stream and use "Paste". This is the preferred method to join two or more streams; however all the streams must have the same PIDs, the same start codes, and the same audio/video properties (that is, they must come from the same source or channel). \
+\
+For MPEG files, editing is performed at MPEG level; video is reassembled and audio is resynchronized. Audio/video sync is ensured even when a large number of cuts is present in the same stream.\
+Editing does not alter the source files; you must use Save As to save the edited movie into another file. \
+You can undo the last "Cut", "Copy", "Paste" or "Trim" using "Undo" from the Edit menu ("Undo" works only once, multiple undo is not supported). You can undo all your editing and trimming using "Revert All Changes" from the Edit menu.\
+\
+For QuickTime files, editing and trimming operations are frame-accurate. But for MPEG files, these operations are not frame-accurate since MPEG packs pictures into GOPs (Group Of Pictures) usually with a duration of half a second. MPEG Streamclip does not split GOPs, so the accuracy of editing is about 1/2 second; but the accuracy of audio/video sync after editing is much higher, and usually less than 1/2 frame, regardless of the number of cuts. Please note that in this version, Trim leaves "at most" the selection, while Cut  removes "at least" the selection and Copy copies "at least" the selection. Editing and trimming can be accurate only if In and Out are both on keyframes; you can go to keyframes using the up and down arrow keys or the "Go to Keyframe" command in the Edit menu.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f6\i \cf0 NOTE: sometimes, with some MPEG files, the Cut command may slightly corrupt one of the pictures that precedes the cut. This issue does not happen with most MPEG files.
+\f1\i0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 FIXING TIMECODE BREAKS
+\f1\b0 \
+Some MPEG streams may have discontinue time code (this is particularly true for VOB files). You can use "Fix Timecode Breaks" from the Edit menu to make MPEG Streamclip handle these streams correctly.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 All timecode breaks found will be listed in the log window, and also in the edit list.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 The option "Do not skip any frame" lets you control whether dropping some frames to fix a timecode break is acceptable or not. By default, this option is enabled for VOB/VRO streams and disabled for other streams. When enabled, "Fix Timecode Breaks" tries to preserve every frame, even if this results in bad video artifacts.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+In some cases, you can use this command to join two or more MPEG files into a single stream; but again, the files being joined must have the same PIDs, the same start codes, and the same audio/video properties. Using "Convert to MPEG" before joining the files can be helpful, because it changes PIDs and start codes to a default value. 
+\f5 And you should not enable the option "Do not skip any frame" when joining files.
+\f1 \
+If the video transition between two files looks bad, you can use the Cut command to improve it.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\b \cf0 \
+USING THE EDIT LIST\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5\b0 \cf0 The edit list contains a list of all the cuts you have made to the stream, and also all timecode breaks found by the "Fix Timecode Breaks" breaks command. To open it, please choose "Edit List" from the List menu.\
+Precisely, the edit list shows all segments of the stream included between two cut points (or two timecode breaks). For each segment, the Start Time and the Duration are listed.\
+If you double-click a segment, or click the "Select" button, the segment will be selected in the player. That is, the In and Out points will be changed to show the segment, and the playhead will be moved to the beginning of that segment.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 THE LOG WINDOW
+\f1\b0 \
+You can open the log window using "Log Window" from the Window menu. The log window records the start and stop time of each conversion, and all error messages. The window also shows the position of all data breaks found during a conversion, and all timecode breaks found by "Fix Timecode Breaks"; when the option "Fix streams with data breaks" is enabled, the window may also show messages like "fixing video" or "fixing audio" that indicate where the stream has been fixed.\
+If you click "Check Stream" you can start a stream check; like a conversion, this will find and list in the log any data break found. With the "Clear Log" button you can clear the log.\
+\
+
+\f0\b SAVING THE STREAM
+\f1\b0 \
+Use "Save As..." in the File menu to save a copy of the stream. If you set the In and Out points or trimmed the stream, only the part of the stream between the In and Out points will be saved; otherwise, the whole stream will be copied.\
+If you have edited the stream, it will not be copied but it will be saved with editing instead.\
+Multiple source files will be joined into a single destination file, which may be larger than 2GB, if needed.\
+All the video and audio tracks will be saved, regardless of the selected video and audio PIDs. Unless you have edited the stream: in this case, only the selected video/audio tracks will be saved.\
+\
+For QuickTime, DV, AVI, and MPEG-4 files you can choose the destination format among MOV, MP4, and AVI. Every movie can be saved as MOV, but only some movies can be saved as MP4 or AVI.\
+To save DivX files as AVI, you have to install the 3ivx codec. Some DivX files, when edited and saved as AVI, may not play well.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f6\i \cf0 NOTE: Squared 5 assumes that you have the legal rights to make a copy of the stream!\
+
+\f1\i0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 EXPORTING TO QUICKTIME, AVI, MPEG-4\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 Select "Export to QuickTime..." or "Export to AVI..." or "Export to MPEG-4.." from the File menu and the Movie Exporter or the AVI/DivX Exporter or the MPEG-4 Exporter window will appear. It will let you export the part of the stream between the In and Out points (or the whole stream if In and Out points have not been set). If you have edited the stream, it will be exported as it appears after editing.\
+\
+These are the available settings:\
+\
+\ul Compression\ulnone \
+Using the Compression pop-up menu, you can choose the video compressor to use. The menu shows a list of all QuickTime video compressors installed in your computer; you can choose any compressor from this list (for MPEG-4 you can only choose between MPEG-4 and H.264). The default compressor is different for each exporter (Motion JPEG A for MOV, Photo-JPEG or 3ivx for AVI, MPEG-4 or H.264 for MP4).\
+\
+\ul Quality\ulnone \
+You can use the Quality slider to set the quality of compression, from 0% (lowest) to 100% (highest or lossless). Some compressors may ignore this setting.\
+\
+\ul Options
+\f6\i \ulnone \
+
+\f1\i0 If the video compressor has custom options, you can use the Options button to set them. \
+\
+\ul iPod\ulnone \
+This button takes the place of the Options button in the MPEG-4 exporter. It lets you quickly set the parameters to make MP4 files that are compatible with Apple iPod, by choosing among 5 presets. The last preset can be used with cellphones too.\
+\
+\ul 2-Pass/Multipass\ulnone \
+If the video compressor is 3ivx or H.264, by enabling this option you can make MPEG Streamclip automatically perform two-pass encoding. 
+\f5 For H.264, more that two passes will be performed because the compressor performs a detailed analysis of the source movie to achieve excellent encoding results at the expense of very long encoding time; it also takes some space on your boot disk.\
+
+\f1 \
+\ul B-Frames\ulnone \
+This option enables B-Frames (Bidirectional Frames) when encoding with H.264 and HDV. Using B-Frames yields better quality for the same data rate, or lower data rate for the same quality. Note that Apple iPod does not support B-Frames.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 \
+\ul Limit Data Rate\ulnone \
+You can enter a data rate limit for any codec that supports this feature. Select a proper unit (Kbps, Mbps, KB/sec, MB/sec) and enter a positive number. Decimal numbers are allowed.\
+When you enter a data rate limit, an estimate of the destination movie size appears.\
+For most codecs, the data rate limit overrides the Quality setting.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+\ul Sound\ulnone \
+With the pop-up menus you can set the sound format, choose between mono or stereo, set the sample rate and, if supported, the bit rate. Supported sound formats are Uncompressed, IMA 4:1, MPEG-4 AAC (MP4), AMR Narrow (AMR-NB), MPEG Layer 2 (MP2). If you choose "Pass Thru" the original audio track of the stream (MP2, PCM or AC3) will be copied without changes in the MOV or AVI file. If you choose "No Sound", the exported file will have no sound.\
+\
+\ul Frame Size\ulnone \
+A default frame size for the exported movie, based on the chosen video compressor and the aspect ratio of the source stream, will be proposed to you. If you don't like it, you can click and select a different frame size, and even enter any custom size between a small 32 x 32 and a huge 2048 x 2048.\
+\
+Scaling is performed in the YUV color space, using a powerful 2D-FIR scaler. This scaler outperforms the built-in bicubic scaler of most video editing applications, bringing quite sharper pictures in less time. So, if scaling is required, It is recommended that you use MPEG Streamclip to make a scaled movie, rather than import the unscaled movie into the video editing application and scale it there.\
+\
+
+\f6\i FIR scaling has excellent quality but it slows down the conversion. When scaling is not enabled, the conversion is fast; it is slow when either horizontal or vertical scaling is enabled; when both horizontal and vertical scaling is enabled, it's even slower. \
+You can disable FIR scaling by choosing the "unscaled" frame size; however, DV codecs may still need to scale the picture using their own faster, low-quality scaling algorithms, resulting in a very bad video quality.\
+
+\f1\i0 \
+
+\f6\i Scaling also includes some advanced TV standard processing. For instance, when MPEG Streamclip scales a 320 x 240 stream up to 720 x 480, it adds two 8-pixels wide black bars at each side of the picture, to conform to NTSC and PAL standards.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f7 \cf0 \
+In the AVI exporter, if you choose the 3ivx codec, the frame size "720 x 576 (DV-PAL)" with rectangular pixels becomes "720 x 576 (DivX PAL)" with square pixels and cropped sides, to conform to DivX Home Theater profile.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\i0 \cf0 \
+\ul Frame Rate\ulnone \
+In this field, you can set the frame rate of the exported movie. If you leave this field empty, the frame rate will be the same as the original movie's frame rate (shown in the "Stream Info" window).\
+\
+\ul Frame Blending\ulnone \
+If you set a frame rate for the exported movie which is different from the original movie's frame rate, you can enable this option to improve motion. Each frame in the exported movie will be a mix of two successive frames of the original movie.\
+\
+
+\f6\i If you left the Frame Rate field empty, this option has no effect unless the original movie has a variable frame rate (that is, when in the "Stream Info" window the symbol "~" appears before the frame rate, e.g. ~20 fps, or when two video tracks are listed with different frame rate).\
+
+\f1\i0 \
+\ul Field Dominance\ulnone \
+This setting lets you choose the field dominance for the destination movie; it is automatically set to "Lower Field First" for DV and to "Upper Field First" for other codecs. Field dominance conversion is performed when the dominance of the destination movie is different from the dominance of the original file (visible in the Stream Info window).\
+The field dominance is the order in which the two fields that form NTSC and PAL pictures, are displayed in a TV set. You may need to change the default setting, if the converted file has bad motion when played on TV.\
+\
+
+\f6\i Field dominance is not changed for progressive files, and for files whose height is up to 288 pixels (like most MPEG-1 files) because these files can't have a field dominance.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5\i0 \cf0 \
+\ul Rotation\ulnone \
+You can choose to rotate the picture by 90\'bc, 180\'bc and/or flip (mirror) it.\
+For 90\'bc rotation, aspect ratio and scale factor will be preserved, resulting in a cropped and letterboxed picture. With 4:3 pictures you can then apply a 133.3% zoom to remove letterboxing, or a 75% zoom to get the full frame without cropping.\
+Interlacing will be preserved if "Interlaced Scaling" is enabled.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+\ul Zoom\ulnone \
+In the field "%" you can optionally set a magnifying factor for the picture. With the field "X/Y" you can change the aspect ratio of the picture: the value 1.333 is good for 16:9 to 4:3 conversion, while the value 0.75 is good for the opposite conversion, from 4:3 to 16:9. A letterbox will be added, but you can remove it by entering in the field "%" a magnifying factor of 133.3 %. Finally, with the two fields "Center" you can move the picture center horizontally and vertically.\
+\
+\ul Cropping\ulnone \
+With this feature, you can crop any edge of the frame: you just have to enable it and enter the amount of pixels you want to crop from each edge. Even numbers are preferred. Negative numbers are allowed: in most cases, they will add a black border to the picture.\
+When you use cropping, the frame size of the resulting movie will be changed; unless you enable the "Scale" option: in this case, the picture is stretched to fit the destination frame size. If you choose a DV frame size, the "Scale" option has no effect because the picture is always stretched.\
+\
+\ul Interlaced Scaling\ulnone \
+If you are scaling an interlaced file to a different height, you can tell MPEG Streamclip to preserve interlacement and scale each video field separately by checking "Interlaced Scaling". If you don't, interlacement will be lost in the scaled movie, and, worse, you will get many visual artifacts. This setting is now enabled by default; remember to disable it with progressive files.\
+\
+
+\f6\i Interlacement requires a frame height of more than 288 pixels. If the frame height of the source file is up to 288, interlaced scaling will not be enabled. If the frame height you have chosen for the exported movie is up to 288 and you check "Interlaced Scaling", MPEG Streamclip discards the lower field before scaling the picture (i.e. it performs a fast deinterlacing by dropping one field).\
+
+\f1\i0 \
+\ul Better Downscaling\ulnone \
+If you are scaling the file to a smaller frame size, by checking "Better Downscaling" you can tell MPEG Streamclip to use a wider 2D-FIR scaler, providing even better picture quality. However this wide 2D-FIR scaler is quite slow and the resulting picture (although perfect) may have less sharpness. This option is disabled by default: enable it only if you need a perfectly scaled movie.\
+\
+
+\f6\i If you are scaling the file to a larger size, this option has no effect; the standard 2D-FIR scaler already provides the best scaling quality.\
+
+\f1\i0 \
+\ul Reinterlace Chroma\ulnone \
+If you are converting an interlaced MPEG-1/MPEG-2 file, you may wish to "reinterlace" chroma. By checking "Reinterlace Chroma" you can enable a special remapping of 4:2:0 chroma lines so they will be split correctly between the two video fields. This is a very advanced option: only professional users may see the difference in the output movie. This option is enabled by default; disable it when you are sure your file is not interlaced.\
+\
+
+\f6\i This option has no effect if the source stream is not an MPEG-1/MPEG-2 stream.
+\f1\i0 \
+\
+\ul Deinterlace Video\ulnone \
+If you have an interlaced file, you may also want to deinterlace it, usually to convert into a progressive format, get a "film" effect and have a better playback on the computer's display. When you check the option "Deinterlace Video", MPEG Streamclip enables a special motion-adaptive deinterlacer, and it deinterlaces the lower field in the parts that contain motion, and preserves video quality of all parts that do not contain motion; the upper field is left unchanged. This option slows down the conversion.\
+
+\f6\i \
+Please note that if you are changing the height of an interlaced stream (that is, you are telling MPEG Streamclip to perform vertical scaling) then you must enable either "Interlaced Scaling" or "Deinterlace Video" (at your own choice), otherwise you will see bad video artifacts in the converted movie.\
+
+\f1\i0 \
+\ul Adjustments\ulnone \
+The Adjustments panel lets you adjust brightness, contrast, saturation and volume. Adjustments take effect only if you click OK.\
+\
+\ul Presets\ulnone \
+The Preset Manager lets you save on disk all the settings in the export window (including Options and Adjustments), and reuse them later. You can make a new preset with the button "New...", load the settings of a preset with "Load", store the current settings in an existing preset with "Save", and also rename and delete a preset, or move it up and down in the list with the Up and Down buttons.\
+\
+\ul Reset All\ulnone \
+This button will reset all the parameters of the current exporter to default, including custom options for all video compressors. Parameters that are shared with other exporters will be reset as well.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 \ul \
+Fast Start\ulnone \
+This option appears in the QuickTime exporter and lets you make a fast-start MOV file (a movie that starts before being downloaded completely). This option is not available in the AVI exporter (never fast-start) and in the MP4 exporter (always fast-start).\
+Note that making a fast-start MOV or MP4 file requires a free disk space of at least twice the final movie size.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+\ul Make Movie - Make AVI - Make MP4\ulnone \
+When all your settings are OK, you can finally click the "Make Movie" or "Make AVI" or "Make MP4" button, choose the name and location of the MOV or AVI or MP4 file, and MPEG Streamclip writes the movie to the specified location. While writing the movie, MPEG Streamclip takes sample pictures from it and decompresses them immediately. This lets you check the compression quality while encoding goes on: so you can stop the encoding and change some settings if the quality is lower than expected. You can disable the preview window in preferences, if you want.\
+\
+
+\f6\i To be clear: the pictures you'll see during the movie encoding are taken from the exported movie, not from the source MPEG file: so you can really check the video quality of the QuickTime or AVI or MPEG-4 movie you're making.\
+
+\f1\i0 \
+\ul Preview\ulnone \
+If you just want to check the video encoding quality without actually writing the movie, you can click the "Preview" button instead of "Make Movie". MPEG Streamclip simulates the encoding process and takes sample pictures from the "virtual" destination movie. With this feature, you can fully adjust your compression settings before writing anything to disk.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 AUDIO AND VIDEO FORMATS SUPPORTED IN AVI FILES\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 MPEG Streamclip can make AVI 1.0 files, with all the limitations of this format (for example, the file cannot exceed 4GB). And many video and audio codecs are not supported in AVI files.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 - Supported video codecs are DV, Cinepak, BMP, JPEG, 3ivx.\
+- You can download 3ivx (version 4.5.1 at the time of this writing, with version 5 coming soon) from http://www.3ivx.com/.
+\f1  This codec can play and encode DivX and MPEG-4 video.\
+
+\f5 - Some PAL devices cannot play 768 x 576 DivX files; in this case, use the special frame size "720 x 576 (DivX PAL)". This frame size preserves the square pixel aspect ratio by cropping both sides of the picture, and unlike 720 x 540 it preserves interlacement.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 - Supported audio codecs are Uncompressed, MPEG Layer 2 (MP2), MPEG Layer 3 (MP3), AC3.\
+- The MPEG Layer 3 codec appears only if you have Windows Media Player 10 or higher.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 - You can put AC3 sound in AVI file with the "Pass Thru" option, only if the sound of the source MPEG file is in AC3 format.\
+- The codec Apple IMA 4:1 is not supported in AVI files: if you select it, the \'b5law 2:1 codec will be used instead (at least in this version of MPEG Streamclip). And the codecs MPEG-4 AAC and AMR Narrow are not supported in AVI, too.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 - The AVI files will be created with a CBR (constant bit rate) audio header. If audio doesn't have a constant bitrate, or if the sample rate is 44.1 kHz and the codec is MPEG Layer 2, a little audio/video sync problem may happen in very long movies. In this case you can write a VBR (variable bit rate) audio header by enabling the option "VBR Audio" in preferences. Not all players can play AVI files with VBR header.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 \
+EXPORTING TO DV STREAM
+\f1\b0 \
+Select "Export to DV..." from the File menu and the DV Exporter window will appear. This will let you export the part of the stream between the In and Out points (or the whole stream if In and Out points have not been set) as a DV stream. Again, if you have edited the movie, it will be exported with all your editing.\
+\
+The Compression pop-up menu lets you select the video compressor to be used. You have two options: DV (DV25), and DVCPRO25. For most uses, choose DV (DV25).\
+\
+The Standard pop-up menu lets you select the standard to be used for the stream: PAL or NTSC. It is automatically set to PAL for 24, 25, 50 fps, and to NTSC for other frame rates, but you can change this default if you need to match the standard used in your DVD authoring application.\
+The frame size is set to 720 x 576 for PAL and 720 x 480 for NTSC; the 2D-FIR scaler will be used if necessary.\
+\
+The Aspect Ratio pop-up menu lets you choose whether the DV stream should be considered as a 4:3 or a 16:9 movie. This setting does almost nothing, except that it changes a bit in the DV stream, making it easier to import in some applications.\
+\
+Field dominance for DV streams is always lower field first, so there isn't a setting for this. Dominance conversion is performed when the original MPEG file is upper field dominant.\
+\
+The "Frame Blending", "Interlaced Scaling", "Better Downscaling", "Reinterlace Chroma" and "Deinterlace Video" options have been already described in the previous paragraph.\
+The setting "Resample Audio to 48 kHz" changes the sample rate of the audio track to the highest rate available for DV; it does nothing when the sample rate of the source stream is already 48 kHz.\
+The option "Split DV Stream in Segments" splits large DV streams in 1.9GB files; a 3-digit suffix is automatically added to the name of DV files following the first one.\
+\
+The settings "Rotation", "Zoom", "Cropping" and the buttons "Presets" and "Adjustments" have been described in the previous paragraph. For "Cropping", the option "Scale" is not available because it does not apply to DV.\
+\
+With the Preset Manager you can save the settings of the DV exporter. DV presets are listed together with MOV/AVI presets but you cannot load a DV preset in the MOV/AVI exporter and vice versa. Some settings are shared by all exporter windows (for instance, "Zoom", but not "Cropping"): if you load a preset in one exporter, these shared settings will be changed in all exporters.\
+\
+The "Preview" and "Make DV Stream" buttons work in the same way as the "Preview" and "Make Movie" buttons of the Movie Exporter window; of course "Make DV Stream" writes a DV file and not a MOV file.\
+\
+You can preview the video compression quality for a DV stream, too, and, if needed, change your settings before writing the DV stream.\
+\
+
+\f0\b EXPORTING A FRAME
+\f1\b0 \
+You can export the frame shown in the player in a JPEG, TIFF, PNG file using "Export Frame..." in the File menu. You can change the frame size (or choose the original size with "Unscaled") and you can set the options "Interlaced Scaling" and "Deinterlace Video" for interlaced streams. 
+\f5 You can also adjust the picture with the Adjustments, and choose the gamma between 2.2 and 1.8. 
+\f1 As usual, the picture will be resized with the 2D-FIR scaler.\
+\
+The two options in "Pixel Aspect" make a little (nearly unnoticeable) correction to the picture aspect. Choose "Computer Graphics" if you want to use the picture in a computer graphics or photo application. Choose "Industry Standard" if you want to use the picture in a video application. These options have effect only if the frame size is 4:3 or 16:9.\
+\
+
+\f0\b CONVERTING THE STREAM
+\f1\b0 \
+The following commands are available only if the source stream is in MPEG-1 or MPEG-2 format.\
+Choose one of the "Convert to" or "Demux" commands from the File menu to perform the desired conversion or demuxing. Again, only the part of the stream between the In and Out points will be converted or demuxed; also, editing will always be included in the converted files.\
+These conversions run as fast as possible and they are just limited by the hard disk speed and the audio conversion speed. When no audio conversion is required, they usually perform at the same speed of a file copy; with audio conversion they will run slower, depending on the processing speed of your PC.\
+Destination files may exceed 2GB, and will not be split. However you can change the In and Out points to make smaller destination files, if you need.\
+All the files written by these commands (when In and Out points are the same) have the same duration, the same start and end time, and they are kept synchronized by a special time-detection technology. So you can perform multiple conversions and use the resulting files together.\
+\
+This is a brief description of the available commands:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f6\i \cf0 Convert to MPEG...
+\f1\i0 \
+converts the stream into a muxed MPEG (program stream) file; if the frame size is suitable, you can import this file in a DVD authoring application and burn it directly, with no encoding time and no loss of quality. Audio is left in its original format (MPEG, AC3 or PCM).\
+Suitable frame sizes for DVD are 720x480, 720x576, 704x480, 704x576, 352x480, 352x576. If the frame size is not suitable, please try the "Convert to Headed MPEG" command instead.\
+If the authoring application stops with an error before burning the file, please enable the option "Fix streams with data breaks" in preferences and try again.\
+\
+
+\f6\i Convert to MPEG with MP2 Audio...
+\f1\i0 \
+same as "Convert to MPEG", but converts AC3 and PCM audio into MP2 (MPEG) audio so you can play the converted MPEG file using QuickTime Player (to play MPEG-2 in QuickTime Player you must have the MPEG-2 Playback Component).\
+
+\f6\i \
+Convert to Headed MPEG...\
+
+\f1\i0 same as "Convert to MPEG" but adds a special header to the MPEG file that lets you import unsupported frame sizes into a DVD authoring application and skip recompression. However, DVDs made from "headed" MPEG files are not guaranteed to work with all players. Please DO NOT TRY to open "headed" MPEG files in QuickTime Player (it will crash).\
+\
+
+\f6\i NOTE: Headed formats have been tested with the following DVD authoring applications: Pegasys TMPGEnc DVD Author; Ulead DVD MovieFactory; Ahead Nero Vision.\
+For Nero Vision, the Headed conversion is required even for supported frame sizes (if you use a normal conversion, Nero may encode the file again); it doesn't work with unsupported frame sizes because Nero checks the whole content of the MPEG file (not just the header).\
+\
+Convert to TS...
+\f1\i0 \
+converts the stream into a transport stream file; the TS file can be uploaded and played in most PVR devices.\
+\
+
+\f6\i Convert to TS with MP2 Audio...
+\f1\i0 \
+converts the stream into a transport stream file and turns AC3 and PCM audio into MP2 (MPEG); so the TS file can be played in PVR devices (like the DreamBox) that do not support AC3/PCM playback.\
+\
+
+\f6\i Convert to TS with REC Header...
+\f1\i0 \
+converts the stream into a transport stream file for Topfield PVR, with the REC header and extension, and MP2 sound. The REC file can be played with the Topfield 5000 devices.\
+\
+
+\f6\i Convert to TS with VID Header...
+\f1\i0 \
+converts the stream into a transport stream file for Humax PVR, with the VID header and extension, and MP2 sound. The VID file can be played with the Humax 8000 devices.\
+\
+
+\f6\i Demux to M2V and AIFF...
+\f1\i0 \
+demuxes the stream and creates an M2V video file and an AIFF audio file; if the frame size is suitable, you can import these two files in a DVD authoring application, and burn them directly, with no encoding time and no loss of quality. The video and audio files have the same exact duration, the same start and end time, and are perfectly synchronized.\
+If you use the same name for the two files, you can double-click the M2V file and open both files in QuickTime Player (again, to open MPEG-2 files in QuickTime you need the MPEG-2 Playback Component).\
+If the frame size is not suitable, please try "Demux to Headed M2V and AIFF".\
+\
+
+\f6\i Demux to M2V and MPA...
+\f1\i0 \
+demuxes the stream and creates an M2V video file and an MPA audio file (which holds MP1/MP2 audio); if the frame size is suitable, you can import these two files in a DVD authoring application, and burn them directly with no encoding time and no loss of quality. For muxed files that have MPEG audio, this command runs faster than "Demux to M2V and AIFF", because no audio conversion is performed; also, the resulting files take less space in the DVD.\
+If the frame size is not suitable, please try "Demux to Headed M2V and MPA".\
+\
+
+\f6\i Demux to M2V and AC3...
+\f1\i0 \
+demuxes the stream and creates an M2V video file and an AC3 audio file; if the frame size is suitable, you can import these two files in a DVD authoring application, and burn them directly with no encoding time and no loss of quality. For muxed files that have AC3 audio, this command runs faster than Demux to M2V and AIFF, because no audio conversion is performed; and again, the resulting files take less space in the DVD.\
+You can't use this command if the audio track is not in AC3 format.\
+If the frame size is not suitable, please try "Demux to Headed M2V and AC3".\
+\
+
+\f6\i Demux to M2V...
+\f1\i0 \
+demuxes the stream and creates an M2V video file. Use this command if you want to extract just the video track.\
+\
+
+\f6\i Demux to AIFF...
+\f1\i0 \
+demuxes the stream and creates an AIFF audio file. Use this command if you want to extract just the audio track.\
+Use this command 4 times (changing the Audio Mode to "L/R Ch", "Center Ch", "LS/RS Ch", "LFE Ch") if you want to extract all the channels of AC3 audio.\
+\
+
+\f6\i Demux to MPA...
+\f1\i0 \
+demuxes the stream and creates an MPA audio file. Use this command if you want to extract the audio track of a file with MPEG audio, and use it in a DVD authoring application.\
+\
+
+\f6\i Demux to AC3...
+\f1\i0 \
+demuxes the stream and creates an AC3 audio file. Use this command if you want to extract the audio track of a file with AC3 audio, and use it in a DVD authoring application. You can't use this command if the audio track is not in AC3 format.\
+\
+
+\f6\i Demux to Unscaled M2V and AIFF...
+\f1\i0 \
+demuxes the stream and creates an "unscaled" M2V video file and an AIFF audio file; you can import these two files in QuickTime Pro and convert them (with audio) to another format using QuickTime's exporters.\
+The "unscaled" M2V file is a demuxed file which tells QuickTime to not prescale it, e.g. to 720 x 540; it preserves its original size e.g. 720 x 576 or 720 x 480 so you won't lose quality when you encode it. This is a special feature of MPEG Streamclip.\
+\
+
+\f6\i Demux to Headed M2V and AIFF...
+\f1\i0 \
+same as "Demux to M2V and AIFF" but adds a special header to the M2V file that lets you import unsupported frame sizes into a DVD authoring application and skip recompression. Again, DVDs made from "headed" M2V files are not guaranteed to work with all players. Please DO NOT TRY to open "headed" M2V files in QuickTime Player (it will crash).\
+\
+
+\f6\i Demux to Headed M2V and MPA...
+\f1\i0 \
+same as "Demux to M2V and MPA" but with the "headed" M2V file that lets you import unsupported frame sizes in a DVD authoring application.\
+\
+
+\f6\i Demux to Headed M2V and AC3...
+\f1\i0 \
+same as "Demux to M2V and AC3" but with the "headed" M2V file that lets you import unsupported frame sizes in a DVD authoring application. You can't use this command if the audio track is not in AC3 format.\
+\
+
+\f6\i Demux to Headed M2V...
+\f1\i0 \
+same as "Demux to M2V" but with the "headed" M2V file that lets you import unsupported frame sizes in a DVD authoring application.\
+\
+
+\f6\i A warning message will tell you if there are data breaks in the stream. A data break means that the stream is corrupted.\
+If the file being converted has data breaks, audio/video sync may be lost. In this case, please enable "Fix streams with data breaks" in preferences before doing the conversion, and MPEG Streamclip will try to recover A/V sync.\
+
+\f1\i0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 PLAYING THE STREAM\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b0 \cf0 You can use this application to play (even at full screen) QuickTime, DV, AVI, MPEG-4 files; but above all, you can play MPEG-1 and MPEG-2 (if you have QuickTime Alternative, or Apple QuickTime with the MPEG-2 Playback Component) muxed files with MPEG, AC3, PCM audio, demuxed M2V files with AIFF audio, and transport streams with MPEG or AC3 audio.\
+Playback of MPEG-2 files requires a PC with a fast processor (especially when playing files with AC3 or PCM audio); please do not expect to get full frame rate playback on a 500MHz computer.\
+Open a stream, and then start playing it in the usual ways: double-click the picture, or hit the space bar on keyboard, or click the play button 
+\f8 |>
+\f1 .\
+\
+
+\f6\i You can also start playback using the L key, since the player supports JKL navigation. This is a quick explanation of JKL navigation: the L key starts forward play at 1x, 2x, 4x, 8x... doubling forward speed (or halving backward speed) each time you hit L; the J key starts backward play at -1x, -2x, -4x, -8x... doubling backward speed (or halving forward speed) each time you hit J; the K key stops playback.\
+
+\f1\i0 \
+With the "Full Screen" command in the Window menu, or with Ctrl+0 (zero) you can start full screen playback. You can zoom the picture in and out with the up and down arrow keys; you can go back to normal playback by clicking the mouse or pressing Esc or 0 (zero) or Ctrl+0 or even Ctrl+W.\
+Most navigation keys can be used in full screen mode.\
+\
+You can use the up and down arrow keys to reach the previous or next keyframe (for MPEG files, the first I-frame of the GOP); also, you can use the command "Go to Keyframe" in the Edit menu to get to the nearest keyframe. The other two arrow keys, as usual, move the playhead by one frame.\
+\
+You can also use the up and down arrow keys to set the sound volume. Ctrl + Up/Down increases/decreases the volume; Shift + Up raises volume above its maximum; Ctrl + Alt + Up/Down turns sound on/off.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f5 \cf0 There are 5 navigation buttons under the player; this is how they work:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f8 \cf0 |>
+\f5 : starts/stops forward play at normal speed;\
+
+\f8 >
+\f4  
+\f5 : starts forward play; doubles forward speed at each click (same as L key);\
+
+\f8 <
+\f4  
+\f5 : starts backward play; doubles backward speed at each click (same as J key);\
+
+\f8 >>
+\f5 : jumps 10 seconds forward (same as Page Down);\
+
+\f8 <<
+\f5 : jumps 10 seconds backward (same as Page Up);\
+Alt + 
+\f8 |>
+\f5 : starts repeated playback of the current selection, from In to Out (same as Alt-K);\
+Alt + 
+\f8 >
+\f5 : starts slow motion; halves slow motion speed at each click (same as Alt-L);\
+Alt + 
+\f8 <
+\f5 : starts backward slow motion; halves slow motion speed at each click (same as Alt-J);\
+Alt + 
+\f8 >>
+\f5 : jumps 1 minute forward (same as Alt-Page Down);\
+Alt + 
+\f8 <<
+\f5 : jumps 1 minute backward (same as Alt-Page Up).\
+If you hold down the Shift key, you can extend the selection with the four arrow keys, Page Up/Down, the 
+\f8 >> 
+\f5 and
+\f8  <<
+\f4  
+\f5 buttons.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+You can play a file or stream even while you are exporting, converting or saving it: however, in this case, both the playback and the conversion will slow down.\
+Please select the correct audio and video PIDs before playing a stream with multiple audio or video tracks; if you don't, a default audio and video track will be played.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\b \cf0 \
+USING BATCH PROCESSING
+\f5\b0 \
+If you want to use batch processing, please open the batch list using the List menu. The batch list shows a queue of tasks that will be executed when you click the Go button.\
+If you have many files you want to convert, you can click the "Add Files" button. You will be asked to choose a task and a destination directory. You have the option to fix timecode breaks and join selected files. For export, you will also need to enter the export settings; if the files don't have the same frame size, rate, and aspect, you will be asked for export settings several times. PIDs for the conversion will be chosen automatically for each file.\
+Loading all files in the batch list may take time: you can stop the process with Esc, if necessary.\
+But there is another way to fill the batch list. In fact, while the batch list is open (even when hidden by other windows) every conversion you choose in the File menu will be added to the batch list instead of being performed immediately (so remember to close it when you want to do an immediate conversion). This includes Save As, Export to, Convert to, Demux to; and even Download and Upload from/to supported PVR devices. The source stream used is of course, the one shown in the player.\
+If you add tasks this way, all editing, trimming, In/Out points, and chosen PIDs, will be saved in the batch list; thus a batched conversion gives the same results as an immediate conversion. If you then make further changes to the source stream in the player, these changes do not affect editing, trimming, In/Out points, and PIDs stored in the batch list. And you can even close the stream and open another stream in the player if you want; all conversion data will remain in the batch list until you delete the task or quit the application.\
+You can start batch processing with the "Go" button. The button's name will change to "Stop", if you click it again, processing of further tasks will be stopped but the currently running task will continue till completion. To stop the running task and all subsequent tasks, you can use the "Stop" button in the progress window.\
+The initial status of a task is "Waiting". If you click the "Hold" button you can change the status to "Held" and then back to "Waiting". When a task is "Held" it will be skipped during batch processing, but it remains in the batch list.\
+Once executed, the status of a task changes to "Completed"; if unsuccessful, the status reports the error message. To execute the task again, you need to change the status back to "Waiting" by using the "Repeat" button.\
+You can change the processing order of tasks by selecting one task and using the "Up" and "Down" buttons. You can remove a task from the list using the "Delete" button, or all tasks using the "Clear" button.\
+You can change the destination folder of one or more tasks with the "Redirect" button.\
+\
+
+\f2\b USING MPEG STREAMCLIP WITH THE DREAMBOX
+\f5\b0 \
+The DreamBox (http://www.dream-multimedia-tv.com) is a DVB set-top box. It comes in several versions (for satellite and digital terrestrial TV), with or without the hard disk. All these versions are supported.\
+The Enigma menu allows MPEG Streamclip to connect directly to the DreamBox, through the Ethernet interface. To enable this menu, please enter the IP address of your DreamBox in MPEG Streamclip preferences. You have to enter the password only if different from "dreambox".\
+\
+If you select "Files...", the "Enigma Files" window will open, showing the files that are in the "movie" folder of the DreamBox hard disk. You can update the file list at any time with the "Refresh" button. If you click the "Open" button (or double-click a file), you can open and immediately play a file in the player, you don't need to download it before. With the "Upload" and "Download" buttons you can upload/download one or more .ts files to/from the DreamBox. Using "Upload" you can also upload to the DreamBox, the stream that is currently in the player, from In to Out. The stream will be automatically converted to .ts while uploading. And, since you can open any DreamBox file in the player, this means that you can even upload a DreamBox file to the DreamBox, after any editing or trimming, without passing through your PC's hard disk.\
+If the batch list is open, or if you select more than one file, Upload and Download tasks will be added to the batch list so you can execute them in batch.\
+Once the .ts file has been uploaded, you need to update the movie list that is in the "recordings.epl" file. This procedure can be done by clicking the "Rebuild" button and forces the DreamBox to reboot. \
+For this reason, uploading a file in the "movie" folder is not recommended: you would better use the the "lost+found" folder for uploaded files, and leave the "movie" folder for TV recordings. In the Enigma Files window, you can go to the "lost+found" folder with the "lost+found" button and, with the "movie" button, you can go back to the "movie" folder; in the DreamBox, you can go to the "lost+found" folder in File mode, by choosing "Root" (red key on remote), then "harddisk" and "lost+found/".\
+With the "Delete" button you can delete a file from the DreamBox. You will be asked 3 times for confirmation. One of these three messages will contain a mini-player that will let you see the .ts file for the last time, and realize what you are going to delete. You can disable the player by holding down the Alt key while you click the Delete button; this can be useful if, for some reason, MPEG Streamclip hangs before the player appears. Still with the Alt key, you can select and delete many files at once.\
+\
+If you select "Recorder", the "Enigma Recorder" window will open, and, if the DreamBox is on, the name and the screenshot of the current TV channel will appear.\
+With the "Start Box Recording" button you can remotely start/stop recording on the DreamBox hard disk. A red word near the button will tell you whether a recording is in progress.\
+With the "Start PC Recording" button you can start recording on your PC's hard disk. You will be asked to choose a folder and a name for the .ts file to be recorder; however, to make this procedure faster, MPEG Streamclip goes to the last folder used for recording and proposes a unique file name, using the channel name and the current date and time. This feature is just what you need to use MPEG Streamclip with a DreamBox that has no internal hard disk.\
+In both cases, the TV channel shown in the window is the same shown by the DreamBox, and not necessarily the one being recorded; you must avoid changing channel while recording on PC, because the data flow may stop.\
+You can't start recording on PC and on DreamBox at the same time.\
+Enigma Recorder, used with the DM-7000, requires at least the 1.08 firmware.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b \cf0 SUPPORT
+\f1\b0 \
+There is no support for this free application, however you can write and ask your questions to Squared 5 (squared5
+\f4 @
+\f1 mpeg-streamclip.com). I will answer only if I have time.\
+Please don't forget to mention the operating system (Windows) in your e-mail.\
+Even if you have no questions to ask, please give your feedback because this will be helpful for me in order to improve this application.\
+\
+
+\f0\b BUGS?
+\f1\b0 \
+Please report any bug you find in this application to Squared 5 (squared5
+\f4 @
+\f1 mpeg-streamclip.com). Even if you get no answer, the bug will be investigated and possibly fixed in the next version. Again, indicate the operating system version in which the bug appeared, and the version of MPEG Streamclip too.\
+\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0\'d0}

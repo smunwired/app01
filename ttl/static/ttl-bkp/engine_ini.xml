@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding ="ISO-8859-1"?>
+<Values>
+	<CourseNo value = "1" />
+	<Title value = "ItemBank Standalone" />
+	<Width value = "1024" />
+	<Height value = "768" />
+	<TotalTime value="60" />
+	<CommunicationType value="1" />
+	<Server ip="thali" port="80" protocol="HTTP" path=""/>
+	<Client fullscreen="0" width="800" height="600" title="ItemBank"/>
+	<ContentEngineName value = "cp_player" />
+	<WebService value="none"/>
+	<ShowResults value="1" />
+	<SplashExist value="0"/>
+	<AssessmentType value="Slap"/>
+	<ContainerType value="Demo"/>
+	<UserType value="Candidate"/>
+	<SwfCommunication value="internal"/>	
+</Values>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<P ID="3P1512" ver="8" tET="0" loL="0" loC="0" cBU="2" crD="00:00:00" mBU="88" moD="10/01/2005 10:41:01" Description="" BasicSkillsReference="Rw/L2.1" KeySkillsReference="C2.2" KeySkillsReference2="C2.1.2" NationalCurriculumReference="" SkillsForLifeReference="" Printable="1" ItemStatus="3" Facility="0.6" Discrimination="0.7" Context="">
+  <S ID="1" nam="Question" lay="1" sOI="1" scT="0" nBV="0" nBS="0" bBV="0" bBS="0" seS="" cBU="62" crD="17/12/2004 08:40:05" mBU="88" moD="10/01/2005 10:41:01">
+    <C ID="999" typ="6">
+      <I ID="1" auS="0" auI="" act="0" />
+    </C>
+    <C ID="1" typ="10" lay="2" maM="0" maS="1" rol="0" tra="0" trI="0" trO="0" taE="0">
+      <I ID="1" x="570" y="180" wid="185" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" alT="" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" tLS="1" tRS="1" bLS="1" bRS="1" boW="3" inC="0" boC="#000000" rBC="#E60000" seC="#764B6E" asC="A" shW="28" shH="28" cor="0" pad="5" doc="ML" tPL="0" tPT="0" inF="" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">produced in quantity</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+      <I ID="2" x="570" y="230" wid="185" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" alT="" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" tLS="1" tRS="1" bLS="1" bRS="1" boW="3" inC="0" boC="#000000" rBC="#E60000" seC="#764B6E" asC="B" shW="28" shH="28" cor="1" pad="5" doc="ML" tPL="0" tPT="0" inF="" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">offered for sale</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+      <I ID="3" x="570" y="280" wid="185" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" alT="" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" tLS="1" tRS="1" bLS="1" bRS="1" boW="3" inC="0" boC="#000000" rBC="#E60000" seC="#764B6E" asC="C" shW="28" shH="28" cor="0" pad="5" doc="ML" tPL="0" tPT="0" inF="" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">introduced to people</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+      <I ID="4" x="570" y="330" wid="200" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" alT="" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" tLS="1" tRS="1" bLS="1" bRS="1" boW="3" inC="0" boC="#000000" rBC="#E60000" seC="#764B6E" asC="D" shW="28" shH="28" cor="0" pad="5" doc="ML" tPL="0" tPT="0" inF="" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">advertised as available</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="2" typ="1" lay="3" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="540" y="330" wid="28" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">D.</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="3" typ="1" lay="4" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="540" y="280" wid="28" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">C.</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="4" typ="1" lay="5" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="540" y="230" wid="28" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">B.</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="5" typ="1" lay="6" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="540" y="180" wid="28" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">A.</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="6" typ="1" lay="7" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="70" y="80" wid="360" hei="30" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:14" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#FFFFFF">The word 'touted' (line 11) in this passage means</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="7" typ="3" lay="8" rol="0" tra="0" trI="0" trO="0">
+      <I ID="1" x="520" y="170" wid="253" hei="193" cBU="2" crD="18/02/2004 11:31:54" mBU="62" moD="17/12/2004 08:40:28" sty="0" sha="3" tLS="1" tRS="1" bLS="1" bRS="1" boW="2" baC="#D1DAEE" boC="#4B5278" />
+    </C>
+    <C ID="8" typ="3" lay="9" rol="0" tra="0" trI="0" trO="0">
+      <I ID="1" x="60" y="70" wid="373" hei="73" cBU="2" crD="18/02/2004 11:31:54" mBU="88" moD="10/01/2005 10:41:01" sty="0" sha="3" tLS="1" tRS="1" bLS="1" bRS="1" boW="2" baC="#7F92B8" boC="#4B5278" />
+    </C>
+    <C ID="9" typ="2" lay="1" rol="0" tra="0" trI="0" trO="0" taE="0">
+      <I ID="1" x="30" y="170" wid="477" hei="300" cBU="0" crD="16/03/2004 10:34:22" mBU="62" moD="17/12/2004 08:40:30" alT="" sty="0" sha="0" tLS="0" tRS="0" bLS="0" bRS="0" boW="0" boC="" grT="flash" orF="Lit L2_Jun02_MY3_21-25.swf" fiS="8.8" fMD="16/03/2004 09:14:48" ali="" opt="1" taI="0" orW="350" orH="220" par="" />
+    </C>
+  </S>
+</P>

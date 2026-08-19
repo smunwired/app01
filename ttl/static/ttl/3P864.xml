@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<P ID="3P864" ver="8" tET="0" loL="0" loC="0" cBU="2" crD="00:00:00" mBU="78" moD="28/01/2005 10:41:41" Description="" BasicSkillsReference="RT/L2.2" KeySkillsReference="C2.2" KeySkillsReference2="C2.1.2" NationalCurriculumReference="" SkillsForLifeReference="" Printable="1" ItemStatus="3" Facility="0.6" Discrimination="0.7" Context="">
+  <S ID="1" nam="Question" lay="1" sOI="1" scT="0" nBV="0" nBS="0" bBV="0" bBS="0" seS="" cBU="62" crD="23/12/2004 15:12:11" mBU="78" moD="28/01/2005 10:41:41">
+    <C ID="999" typ="6">
+      <I ID="1" auS="0" auI="" act="0" />
+    </C>
+    <C ID="1" typ="10" lay="2" maM="0" maS="1" rol="0" tra="0" trI="0" trO="0" taE="0">
+      <I ID="1" x="510" y="200" wid="220" hei="50" cBU="2" crD="18/02/2004 11:31:21" mBU="78" moD="28/01/2005 10:37:26" alT="" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" tLS="1" tRS="1" bLS="1" bRS="1" boW="3" inC="0" boC="#000000" rBC="#E60000" seC="#764B6E" asC="A" shW="28" shH="28" cor="0" pad="5" doc="ML" tPL="0" tPT="0" inF="" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">encourage people to visit the Benedictine Priory </FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+      <I ID="2" x="510" y="260" wid="200" hei="50" cBU="2" crD="18/02/2004 11:31:21" mBU="78" moD="28/01/2005 10:37:26" alT="" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" tLS="1" tRS="1" bLS="1" bRS="1" boW="3" inC="0" boC="#000000" rBC="#E60000" seC="#764B6E" asC="B" shW="28" shH="28" cor="0" pad="5" doc="ML" tPL="0" tPT="0" inF="" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">inform shoppers about today's market in Eye</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+      <I ID="3" x="510" y="320" wid="240" hei="50" cBU="2" crD="18/02/2004 11:31:21" mBU="78" moD="28/01/2005 10:37:26" alT="" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" tLS="1" tRS="1" bLS="1" bRS="1" boW="3" inC="0" boC="#000000" rBC="#E60000" seC="#764B6E" asC="C" shW="28" shH="28" cor="1" pad="5" doc="ML" tPL="0" tPT="0" inF="" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">inform readers how Eye became the town it is today</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+      <I ID="4" x="510" y="380" wid="200" hei="50" cBU="2" crD="18/02/2004 11:31:21" mBU="78" moD="28/01/2005 10:37:26" alT="" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" tLS="1" tRS="1" bLS="1" bRS="1" boW="3" inC="0" boC="#000000" rBC="#E60000" seC="#764B6E" asC="D" shW="28" shH="28" cor="0" pad="5" doc="ML" tPL="0" tPT="0" inF="" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">attract visitors to the annual 'Eye' show<FONT SIZE="15"></FONT></FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="2" typ="1" lay="3" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="480" y="390" wid="28" hei="30" cBU="2" crD="18/02/2004 11:31:22" mBU="78" moD="28/01/2005 10:37:26" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">D.</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="3" typ="1" lay="4" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="480" y="330" wid="28" hei="30" cBU="2" crD="18/02/2004 11:31:22" mBU="78" moD="28/01/2005 10:37:26" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">C.</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="4" typ="1" lay="5" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="480" y="270" wid="28" hei="30" cBU="2" crD="18/02/2004 11:31:22" mBU="78" moD="28/01/2005 10:37:26" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">B.</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="5" typ="1" lay="6" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="480" y="210" wid="28" hei="30" cBU="2" crD="18/02/2004 11:31:22" mBU="78" moD="28/01/2005 10:37:26" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#000000">A.</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="6" typ="1" lay="7" rol="0" tra="0" trI="0" trO="0" taE="0" pri="1">
+      <I ID="1" x="50" y="80" wid="330" hei="30" cBU="2" crD="18/02/2004 11:31:22" mBU="78" moD="28/01/2005 10:35:49" sty="0" sha="0" scr="[textvalue]" auS="0" auI="" act="0" boW="0" baC="0" boC="#000000" scB="0" sel="0" reL="0" alT="" taI="0" aLC="" aLS="0">
+        <TEXTFORMAT LEADING="2">
+          <P ALIGN="LEFT">
+            <FONT FACE="Comic Sans MS" SIZE="15" COLOR="#FFFFFF">The <B>main</B> purpose of this document is to</FONT>
+          </P>
+        </TEXTFORMAT>
+      </I>
+    </C>
+    <C ID="7" typ="3" lay="8" rol="0" tra="0" trI="0" trO="0">
+      <I ID="1" x="470" y="180" wid="283" hei="263" cBU="2" crD="18/02/2004 11:31:22" mBU="78" moD="28/01/2005 10:37:26" sty="0" sha="3" tLS="1" tRS="1" bLS="1" bRS="1" boW="2" baC="#D1DAEE" boC="#4B5278" />
+    </C>
+    <C ID="8" typ="3" lay="9" rol="0" tra="0" trI="0" trO="0">
+      <I ID="1" x="40" y="70" wid="383" hei="83" cBU="2" crD="18/02/2004 11:31:22" mBU="78" moD="28/01/2005 10:35:49" sty="0" sha="3" tLS="1" tRS="1" bLS="1" bRS="1" boW="2" baC="#7F92B8" boC="#4B5278" />
+    </C>
+    <C ID="9" typ="2" lay="1" rol="0" tra="0" trI="0" trO="0" taE="0">
+      <I ID="1" x="40" y="180" wid="385" hei="279" cBU="0" crD="28/01/2005 10:41:32" mBU="78" moD="28/01/2005 10:41:41" alT="[scriptvalue]" sty="0" sha="0" tLS="0" tRS="0" bLS="0" bRS="0" boW="0" boC="#000000" grT="flash" orF="3P864S1C9T1.swf" fiS="33.2" fMD="28/01/2005 10:41:16" ali="" opt="1" taI="0" orW="385" orH="279" par="" />
+    </C>
+  </S>
+</P>

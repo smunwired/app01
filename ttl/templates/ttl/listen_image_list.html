@@ -1,0 +1,54 @@
+<html>
+ 
+<head>
+    <title>Listens</title>
+    <style>
+        .row1 {
+            background: #EDF3FE;
+        }
+        .row2 {
+            background: white;
+        }
+        table {
+            margin-left: 50px;
+            margin-top: 15px;
+            column-width: 20px;
+            font-size: 12px;
+            border: 0;
+            padding: 15px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+ 
+<body>
+	<h2>
+		<tr width="100%">
+			<td><a href="{% url 'ttl:artist_list' %}">Artists</a></td>
+			<td><a href="{% url 'ttl:title_list' %}">Titles</a></td>
+			<td><a href="{% url 'ttl:image_list' %}">Images</a></td>
+			<td><b>Listens</b></td></h2><h3><td><a href="ttl/listen/add">Add</a><td>
+		</tr>
+	</h3>
+	<div class="container">
+                {% load static %}
+                {% for i in object_list|dictsortreversed:"listen_date" %}
+			<a href="{% url 'ttl:title_detail' i.title_id %}">
+				{% if i.title_image %}
+					<image src="{% static 'ttl/' %}{{ i.title_image }}" title="{{ i.title }} {{ i.listen_date }}" width="100" length="100">
+				{% else %}
+					<image src="{{ i.url }}" title="{{ i.title }} {{ i.listen_date }}" width="100" length="100>"</td>
+				{% endif %}
+			</a>
+                {% endfor %}
+    </div>
+</body>
+ 
+</html>

@@ -1,0 +1,88 @@
+<html>
+ 
+<head>
+    <title>Images</title>
+    <style>
+        .row1 {
+            background: #EDF3FE;
+        }
+        .row2 {
+            background: white;
+        }
+        table {
+            margin-left: 50px;
+            margin-top: 15px;
+            column-width: 20px;
+            font-size: 12px;
+            border: 0;
+            padding: 15px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+        <h2>
+                <tr width="100%">
+                        <td><a href="{% url 'ttl:artist_list' %}">Artists</a></td>
+                        <td><a href="{% url 'ttl:title_list' %}">Titles</a></td>
+                        <td><b>Images</b></td>
+                        <td><a href="{% url 'ttl:listen_image_list' %}">Listens</a></td>
+                </tr>
+        </h2>
+ 
+    <div class="container">
+<!--        <table border="5px solid #000;"> -->
+        <table border="0" padding="0px;">
+            <tbody>
+ 
+                <thead>
+                    <tr>
+			<th>alt</th>
+			<th>url</th>
+			<th>rendered</th>
+			<th><a href="{% url 'ttl:image_add' %}">Add</a></th>
+                    </tr>
+ 
+                </thead>
+            <tbody>
+		{% load static %}
+                {% for i in object_list|dictsort:"alt" %}
+		    {% if i.title_image %}
+		    	<a href="{% url 'ttl:image_edit' i.id %}"><img src=" {% static 'ttl/' %}{{ i.title_image }}" width="50" height="50" title="static:{{ i.alt }}" ></a>
+		    {% elif i.url %}
+		    	<a href="{% url 'ttl:image_edit' i.id %}"><img src=" {{ i.url }}" width="50" height="50" title="http:{{ i.alt }}" ></a>
+		    {% else %}
+		    <p/>no image found for {{ i.title }}
+		    {% endif %} 
+                {% endfor %}
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+ 
+</html>
