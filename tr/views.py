@@ -317,9 +317,10 @@ class TransactionAccountYearMonthListView(ListView):
         self.year = self.kwargs['year']
         self.month = self.kwargs['month']
         self.account_id = self.kwargs['pk']
-        self.date = coalesce(self.statement_date,self.receipt_date)
-        #queryset = Transaction.objects.filter(statement_date__year=self.year,statement_date__month=self.month,account_id=self.account_id).order_by('statement_date')
-        queryset = Transaction.objects.filter(self.date__year==self.year,self.date__month==self.month,account_id==self.account_id).order_by('self.date')
+        #self.date = Coalesce(self.statement_date,self.receipt_date)
+        self.date = Coalesce('statement_date','receipt_date')
+        queryset = Transaction.objects.filter(statement_date__year=self.year,statement_date__month=self.month,account_id=self.account_id).order_by('statement_date')
+        #queryset = Transaction.objects.filter(self.date__year==self.year,self.date__month==self.month,account_id==self.account_id).order_by('self.date')
         return queryset
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

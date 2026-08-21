@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'fn',
 #    'mv',
     'ttl',
-#    'inv',
+    'inv',
 #    'map',
 #    'smart_selects',
 #    'chained',
