@@ -152,6 +152,7 @@ LOGOUT_REDIRECT_URL = "home"
 #USE_DJANGO_JQUERY = True
 #MEDIA_ROOT = "/Users/munns/git/stockholm/omnium/ar/static/images"
 STATIC_URL = 'static/'
+STATIC_ROOT = '/var/www/static'
 MEDIA_ROOT = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 STATICFILES_DIRS = (
