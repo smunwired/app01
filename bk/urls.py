@@ -11,6 +11,7 @@ urlpatterns = [
     path("/agency/add", AgencyAddView.as_view(), name='agency-add'),
     path("/agency/update/<pk>", AgencyUpdateView.as_view(), name='agency-update'),
     path("/agency/delete/<pk>", AgencyDeleteView.as_view(), name='agency-delete'),
+    path("", BookingListView.as_view(), name='booking-list'),
     path("/bookings", BookingListView.as_view(), name='booking-list'),
     path("/booking/add", BookingAddView.as_view(), name='booking-add'),
     path("/booking/update/<pk>", BookingUpdateView.as_view(), name='booking-update'),
