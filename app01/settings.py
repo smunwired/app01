@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 #    'titles',
 #    'receipts',
     'tr',
-#    'bk',
+    'bk',
     'fn',
 #    'mv',
     'ttl',
