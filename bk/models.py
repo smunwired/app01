@@ -19,7 +19,9 @@ class Booking(models.Model):
     booking_date = models.DateField(null=True, blank=True)
     event_date_from = models.DateField(null=True, blank=True)
     event_date_to = models.DateField(null=True, blank=True)
-    name = models.CharField(max_length=155)
+    event_name = models.CharField(max_length=155,null=True,blank=True)
+    reference = models.CharField(max_length=55,null=True,blank=True)
+    notes = models.CharField(max_length=455,null=True,blank=True)
     purchase_price = models.FloatField(null=True, blank=True)
     def __str__(self):
         return f"{self.name}"

@@ -48,6 +48,17 @@ class TypeDeleteView(DeleteView):
 class BookingListView(ListView):
     model = Booking
 
+#    def get_queryset(self):
+#        self.startswith = self.kwargs['startswith']
+#        return Booking.objects.filter(type_startswith=(self.startswith))
+
+class BookingTypeListView(ListView):
+    model = Booking
+    def get_queryset(self):
+        booking_type = self.kwargs["pk"]
+        queryset = Booking.objects.all().filter(type_id=booking_type).order_by('-booking_date')
+        return queryset
+
 #class BookingAddView(LoginRequiredMixin,CreateView):
 class BookingAddView(CreateView):
     fields = "__all__"
