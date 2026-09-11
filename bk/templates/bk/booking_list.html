@@ -31,7 +31,7 @@
 <p><a href="types">types</a> <a href="agencies">agencies</a> <a href="bookings">bookings</a></p>
 
 <table>
-    <tr><th>type<th>agency<th>booked<th>for<th>to<th>event<th>cost<td><a href="booking/add">add</a></td>
+	<tr><th>type<th>agency<th>booked<th>for<th>to<th>reference<th>cost<th>notes<td><a href="booking/add">add</a></td>
     </tr>
     <!-- Iterate over object_list -->
     {% for object in object_list %}
@@ -42,8 +42,9 @@
         <td> {{ object.booking_date | date:"d-M-Y" }} </td> 
         <td> {{ object.event_date_from | date:"d-M-Y" }} </td> 
         <td> {{ object.event_date_to | date:"d-M-Y" }} </td> 
-        <td> {{ object.name }} </td> 
-        <td> {{ object.purchase_price }} </td> 
+        <td> {{ object.reference }} </td> 
+        <td> {{ object.purchase_price }} </td>
+        <td> {{ object.notes }} </td>
         <td><a href="{% url 'bk:booking-update' object.id %}">edit</a></td>
         <td><a href="{% url 'bk:booking-delete' object.id %}">delete</a></td>
     </tr>

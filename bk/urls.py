@@ -1,5 +1,5 @@
 from django.urls import path
-from bk.views import TypeListView, TypeAddView, TypeUpdateView, TypeDeleteView, AgencyListView, AgencyAddView, AgencyUpdateView, AgencyDeleteView, BookingListView, BookingAddView, BookingUpdateView, BookingDeleteView
+from bk.views import TypeListView, TypeAddView, TypeUpdateView, TypeDeleteView, AgencyListView, AgencyAddView, AgencyUpdateView, AgencyDeleteView, BookingListView, BookingTypeListView, BookingAddView, BookingUpdateView, BookingDeleteView
 
 app_name = "bk"
 urlpatterns = [
@@ -13,7 +13,7 @@ urlpatterns = [
     path("/agency/delete/<pk>", AgencyDeleteView.as_view(), name='agency-delete'),
     path("", BookingListView.as_view(), name='booking-list'),
     path("/bookings", BookingListView.as_view(), name='booking-list'),
-    path("/booking/<int:pk>", BookingTypeListView.as_view(), name='booking-type-list'),
+    path("/bookings/type/<int:pk>", BookingTypeListView.as_view(), name='booking-type-list'),
     path("/booking/add", BookingAddView.as_view(), name='booking-add'),
     path("/booking/update/<pk>", BookingUpdateView.as_view(), name='booking-update'),
     path("/booking/delete/<pk>", BookingDeleteView.as_view(), name='booking-delete'),
