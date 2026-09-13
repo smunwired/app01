@@ -1,38 +1,14 @@
 <head>
-    <title>Bookings</title>
-    <style>
-        .row1 {
-            background: #EDF3FE;
-        }
-        .row2 {
-            background: white;
-        }
-        table {
-            margin-left: 50px;
-            margin-top: 15px;
-            column-width: 20px;
-            font-size: 12px;
-            border: 0;
-            padding: 15px;
-        }
-
-        thead {
-            padding: 10px;
-        }
-
-        tbody {
-            padding: 10px;
-        }
-    </style>
+    <title>Bookings:Bookings</title>
+    {% include 'bk/style.html' %}
 </head>
 
 <h1>Bookings</h1>
 
-<p><a href="types">types</a> <a href="agencies">agencies</a> <a href="bookings">bookings</a></p>
+{% include 'bk/links.html' %}
 
 <table>
-	<tr><th>type<th>agency<th>booked<th>for<th>to<th>reference<th>cost<th>notes<td><a href="booking/add">add</a></td>
-    </tr>
+    <tr><th>type<th>agency<th>booked<th>for<th>to<th>reference<th>cost<th>notes<td><a href="{% url 'bk:booking-add' %}">add</a></td></tr>
     <!-- Iterate over object_list -->
     {% for object in object_list %}
     <!-- Display Objects -->

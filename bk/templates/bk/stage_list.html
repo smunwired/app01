@@ -1,0 +1,28 @@
+<head>
+    <title>Bookings:Stages</title>
+    {% include "bk/style.html" %}
+</head>
+
+<h1> Stages </h1> 
+
+{% include 'bk/links.html' %}
+
+<table>
+    <tr><th>seats<th>date<th>booking<th>flight<td><a href="{% url 'bk:stage-add' %}">add</a></td>
+    </tr>
+    <!-- Iterate over object_list -->
+    {% for object in object_list %}
+    <!-- Display Objects -->
+<tr>    
+    <td> {{ object.seats }} </td> 
+    <td> {{ object.stage_date }} </td> 
+    <td> {{ object.booking }} </td> 
+    <td> {{ object.flight}} </td> 
+    <td><a href="{% url 'bk:stage-update' object.id %}">edit</a></td>
+    <td><a href="{% url 'bk:stage-delete' object.id %}">delete</a></td>
+</tr>
+    <!-- If object_list is empty  -->
+    {% empty %}
+    <li>No objects yet.</li>
+    {% endfor %}
+</table>
