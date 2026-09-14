@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<h1>Cinema Bookings</h1>
+<h1>Flights Booked</h1>
 <div style="margin-left:20px;margin-top:20px">
 <table>
 <tr><th>booked<th>from<th>to<th>for<th>cost<th>agency<th>type<th>event_name<th>notes<th>reference<th>Notes<td><a href="{% url 'bk:booking-add' %}">add</a>
@@ -24,8 +24,8 @@
     <td>{{ l.notes }} </td>
     <td>{{ l.reference }} </td>
     <td><a href="{% url 'bk:booking-detail' l.pk %}">detail</a></td>
-    <td><a href="{% url 'bk:booking-detail' l.pk %}">edit</a></td>
-    <td><a href="{% url 'bk:booking-detail' l.pk %}">del</a></td>
+    <td><a href="{% url 'bk:booking-update' l.pk %}">edit</a></td>
+    <td><a href="{% url 'bk:booking-delete' l.pk %}">del</a></td>
 </tr>  
 {% empty %}
   <p>This type has no bookings.</p>

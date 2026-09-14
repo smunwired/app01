@@ -24,8 +24,8 @@
     <td>{{ l.notes }} </td>
     <td>{{ l.reference }} </td>
     <!--<td><a href="{% url 'bk:booking-detail' l.pk %}">detail</a></td>-->
-    <td><a href="{% url 'bk:booking-detail' l.pk %}">edit</a></td>
-    <td><a href="{% url 'bk:booking-detail' l.pk %}">del</a></td>
+    <td><a href="{% url 'bk:booking-update' l.pk %}">edit</a></td>
+    <td><a href="{% url 'bk:booking-delete' l.pk %}">del</a></td>
 </tr>  
 {% empty %}
   <p>This type has no bookings.</p>

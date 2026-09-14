@@ -143,7 +143,12 @@ class BookingAddView(CreateView):
 class BookingUpdateView(UpdateView):
     fields = "__all__"
     model = Booking
-    success_url = reverse_lazy('bk:booking-list')
+#    success_url = reverse_lazy('bk:cinema-list')
+    def get_success_url(self):
+        if (self.object.type_id == 1):
+            return reverse('bk:flights-booked-list')
+        else:
+            return reverse('bk:cinema-list')
 
 class BookingDeleteView(DeleteView):
     model = Booking
