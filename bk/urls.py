@@ -32,6 +32,7 @@ urlpatterns = [
     path("/booking/<pk>", BookingDetailView.as_view(), name='booking-detail'),
     path("/bookings/type/<int:pk>", BookingTypeListView.as_view(), name='booking-type-list'),
     path("/booking/add", BookingAddView.as_view(), name='booking-add'),
+    path("/booking/detail/<pk>", BookingDetailView.as_view(), name='booking-detail'),
     path("/booking/update/<pk>", BookingUpdateView.as_view(), name='booking-update'),
     path("/booking/delete/<pk>", BookingDeleteView.as_view(), name='booking-delete'),
     path("/cinema", CinemaTypeListView.as_view(), name='cinema-list'),

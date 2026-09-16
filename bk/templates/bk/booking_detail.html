@@ -1,18 +1,13 @@
-<head>
-<title>Cinema Bookings</title>
-{% include "bk/style.html" %}
-</head>
-
 {% include 'bk/links.html' %}
-
 {% block content %}
-
+<h1> Bookings : {{ type.name }} </h1>
 <h1>Cinema Bookings</h1>
+
 <div style="margin-left:20px;margin-top:20px">
 <table>
 <tr><th>booked<!--<th>from<th>to--><th>for<th>cost<th>agency<!--<th>type<th>event_name--><th>notes<th>reference<th>Notes<td><a href="{% url 'bk:booking-add' %}">add</a>
 </tr>
-{% for l in object_list|dictsort:"booking_date" %}
+{% for l in type.booking_set.all|dictsort:"booking_date" %}
 <tr>
     <td>{{ l.booking_date }}</td>
     <td>{{ l.event_date_from }} </td>
@@ -24,8 +19,8 @@
     <td>{{ l.notes }} </td>
     <td>{{ l.reference }} </td>
     <!--<td><a href="{% url 'bk:booking-detail' l.pk %}">detail</a></td>-->
-    <td><a href="{% url 'bk:booking-update' l.pk %}">edit</a></td>
-    <td><a href="{% url 'bk:booking-delete' l.pk %}">del</a></td>
+    <td><a href="{% url 'bk:booking-detail' l.pk %}">edit</a></td>
+    <td><a href="{% url 'bk:booking-detail' l.pk %}">del</a></td>
 </tr>  
 {% empty %}
   <p>This type has no bookings.</p>
