@@ -41,7 +41,7 @@
 			<th>activity</th>
 			<th>venue</th>
 			<th>extra</th>
-			<th><a href="{% url 'fn:activity_add' %}">Add</a></th>
+			<th><a href="{% url 'fn:activity-create' %}">Add</a></th>
                     </tr>
  
                 </thead>
@@ -53,8 +53,8 @@
 		    <td>{{ i.notes }}</td>
                     <td>{{ i.venue }}</td>
 		    <td>{{ i.extra }}</td>
-		    <td><a href="{% url 'fn:activity_edit' i.pk %}">Edit</a></td>
-                    <td><a href="{% url 'fn:activity_delete' i.pk %}">Delete</a></td>
+		    <td><a href="{% url 'fn:activity-update' i.pk %}">Edit</a></td>
+                    <td><a href="{% url 'fn:activity-delete' i.pk %}">Delete</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

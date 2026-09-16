@@ -1,0 +1,27 @@
+{% include 'bk/links.html' %}
+{% block content %}
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<tr><th>stage date<th>seats<th>sequence<th>booking<th>flight<td><a href="{% url 'bk:stage-add' %}">add</a></tr>
+{% for l in stage.flight_set.all|dictsort:"flight_no" %}
+<tr>
+<td>{{ l.flight_no }} </td>
+<td>{{ l.departure_time }} </td>
+<td>{{ l.arrival_time }} </td>
+<td>{{ l.operator_id }} </td>
+<td>{{ l.arrive_dest_id_id }} </td>
+<td>{{ l.depart_dest_id_id }} </td>
+<td>{{ l.
+    <td><a href="{% url 'bk:flight-detail' l.pk %}">detail</a></td>
+    <td><a href="{% url 'bk:flight-update' l.pk %}">edit</a></td>
+    <td><a href="{% url 'bk:flight-delete' l.pk %}">del</a></td>
+</tr>  
+{% empty %}
+  <p>This stage has no flights.</p>
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}
+

@@ -1,6 +1,7 @@
 from django.urls import path
 from bk.views import TypeListView, TypeDetailView, TypeFlightDetailView, TypeAddView, TypeUpdateView, TypeDeleteView 
-from bk.views import AgencyListView, AgencyAddView, AgencyUpdateView, AgencyDeleteView, DestinationListView, DestinationAddView, DestinationUpdateView, DestinationDeleteView, FlightListView, FlightAddView, FlightUpdateView, FlightDeleteView, StageListView, StageAddView, StageUpdateView, StageDeleteView
+from bk.views import AgencyListView, AgencyAddView, AgencyUpdateView, AgencyDeleteView, DestinationListView, DestinationAddView, DestinationUpdateView, DestinationDeleteView, FlightListView, FlightAddView, FlightUpdateView, FlightDeleteView
+from bk.views import StageListView, StageAddView, StageDetailView, StageUpdateView, StageDeleteView
 from bk.views import BookingListView, BookingDetailView, BookingTypeListView, BookingAddView, BookingUpdateView, BookingDeleteView
 from bk.views import FlightTypeListView,CinemaTypeListView
 app_name = "bk"
@@ -25,6 +26,7 @@ urlpatterns = [
     path("/flight/delete/<pk>", FlightDeleteView.as_view(), name='flight-delete'),
     path("/stages", StageListView.as_view(), name='stage-list'),
     path("/stage/add", StageAddView.as_view(), name='stage-add'),
+    path("/stage/detail/<pk>", StageDetailView.as_view(), name='stage-detail'),
     path("/stage/update/<pk>", StageUpdateView.as_view(), name='stage-update'),
     path("/stage/delete/<pk>", StageDeleteView.as_view(), name='stage-delete'),
     path("", BookingListView.as_view(), name='booking-list'),

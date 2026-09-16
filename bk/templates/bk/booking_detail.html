@@ -1,29 +1,22 @@
 {% include 'bk/links.html' %}
 {% block content %}
-<h1> Bookings : {{ type.name }} </h1>
-<h1>Cinema Bookings</h1>
-
+<h1>Booking Detail:Stages</h1>
 <div style="margin-left:20px;margin-top:20px">
 <table>
-<tr><th>booked<!--<th>from<th>to--><th>for<th>cost<th>agency<!--<th>type<th>event_name--><th>notes<th>reference<th>Notes<td><a href="{% url 'bk:booking-add' %}">add</a>
-</tr>
-{% for l in type.booking_set.all|dictsort:"booking_date" %}
+<tr><th>stage date<th>seats<th>sequence<th>booking<th>flight<td><a href="{% url 'bk:stage-add' %}">add</a></tr>
+{% for l in booking.stage_set.all|dictsort:"stage_date" %}
 <tr>
-    <td>{{ l.booking_date }}</td>
-    <td>{{ l.event_date_from }} </td>
-    <!--<td>{{ l.event_date_to }} </td>-->
-    <td>{{ l.purchase_price }} </td>
-    <td>{{ l.agency }} </td>
-    <!--<td>{{ l.type }} </td>
-    <td>{{ l.event_name }} </td>-->
-    <td>{{ l.notes }} </td>
-    <td>{{ l.reference }} </td>
-    <!--<td><a href="{% url 'bk:booking-detail' l.pk %}">detail</a></td>-->
-    <td><a href="{% url 'bk:booking-detail' l.pk %}">edit</a></td>
-    <td><a href="{% url 'bk:booking-detail' l.pk %}">del</a></td>
+    <td>{{ l.stage_date|date:"d-M-Y" }}</td>
+    <td>{{ l.seats }} </td>
+    <td>{{ l.sequence}} </td>
+    <td>{{ l.booking }} </td>
+    <td>{{ l.flight }} </td>
+    <td><a href="{% url 'bk:stage-detail' l.pk %}">detail</a></td>
+    <td><a href="{% url 'bk:stage-update' l.pk %}">edit</a></td>
+    <td><a href="{% url 'bk:stage-delete' l.pk %}">del</a></td>
 </tr>  
 {% empty %}
-  <p>This type has no bookings.</p>
+  <p>This booking has no stages.</p>
 {% endfor %}
 </table>
 </div>

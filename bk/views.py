@@ -60,6 +60,9 @@ class StageAddView(CreateView):
     model = Stage
     success_url = reverse_lazy("bk:stage-list")
 
+class StageDetailView(DetailView):
+    model = Stage
+
 class StageUpdateView(UpdateView):
     fields = "__all__"
     model = Stage

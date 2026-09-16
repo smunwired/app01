@@ -8,14 +8,18 @@
 {% include 'bk/links.html' %}
 
 <table>
-    <tr><th>name<th>code<th>type<td><a href="{% url 'bk:destination-add' %}">add</a></td></tr>
+    <tr>
+	<th>type
+	<th>name
+	<th>code
+	<td><a href="{% url 'bk:destination-add' %}">add</a></td></tr>
     <!-- Iterate over object_list -->
-    {% for object in object_list %}
+    {% for object in object_list|dictsort:"type.name" %}
     <!-- Display Objects -->
 <tr>    
-    <td> {{ object.name}} </td>
-    <td> {{ object.code}} </td>
-    <td> {{ object.type}} </td>
+    <td> {{ object.type }} </td>
+    <td> {{ object.name }} </td>
+    <td> {{ object.code|default_if_none:"" }} </td>
     <td><a href="{% url 'bk:destination-update' object.id %}">edit</a></td>
     <td><a href="{% url 'bk:destination-delete' object.id %}">delete</a></td>
 </tr>
