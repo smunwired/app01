@@ -2,30 +2,7 @@
  
 <head>
     <title>Fencing</title>
-    <style>
-        .row1 {
-            background: #EDF3FE;
-        }
-        .row2 {
-            background: white;
-        }
-        table {
-            margin-left: 50px;
-            margin-top: 15px;
-            column-width: 20px;
-            font-size: 12px;
-            border: 0;
-            padding: 15px;
-        }
- 
-        thead {
-            padding: 10px;
-        }
- 
-        tbody {
-            padding: 10px;
-        }
-    </style>
+    {% include "fn/style.html" %}
 </head>
  
 <body>
@@ -38,8 +15,9 @@
                     <tr>
 			<th>date</th>
 			<th>type</th>
-			<th>activity</th>
+			<th>event / activity</th>
 			<th>venue</th>
+			<th>lesson</th>
 			<th>extra</th>
 			<th><a href="{% url 'fn:activity-create' %}">Add</a></th>
                     </tr>
@@ -50,8 +28,9 @@
                 <tr  class=" {% cycle "row1" "row2" %} " >
                     <td>{{ i.activity_date }}</td>
                     <td>{{ i.get_type_display }}</td>
-		    <td>{{ i.notes }}</td>
-                    <td>{{ i.venue }}</td>
+                    <td>{{ i.event_notes }}</td>
+		    <td>{{ i.venue }}</td>
+		    <td>{{ i.lesson}}</td>
 		    <td>{{ i.extra }}</td>
 		    <td><a href="{% url 'fn:activity-update' i.pk %}">Edit</a></td>
                     <td><a href="{% url 'fn:activity-delete' i.pk %}">Delete</a></td>

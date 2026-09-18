@@ -36,3 +36,9 @@ class Activity(models.Model):
             return f'{self.get_type_display()}, {self.activity_date}, {self.event}, {self.venue}'
         else:
             return f'{self.get_type_display()}, {self.activity_date}, {self.venue}'
+    @property
+    def event_notes(self):
+        if (self.event):
+            return f'{self.event}, {self.notes}'
+        else:
+            return self.notes
