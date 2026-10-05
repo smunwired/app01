@@ -34,7 +34,7 @@ class Title(models.Model):
         ordering = ['indexed_name']
 
 class Listen(models.Model):
-    listen_date=models.DateField(default=datetime.now())
+    listen_date=models.DateField(null = True, blank = True)
     title=models.ForeignKey(Title, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.listen_date)
