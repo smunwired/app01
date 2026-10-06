@@ -30,4 +30,5 @@ urlpatterns = [
     path('tr', include('tr.urls')),
     path('bk', include('bk.urls')),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("inventory", TemplateView.as_view(template_name="inventory/index.html"), name="inventory"),
 ]

@@ -1,12 +1,13 @@
 from django.db import models
 from bikes.models import Bike
-import datetime
+#import datetime
 
 # Create your models here.
 
 class Ride(models.Model):
     bike = models.ForeignKey(Bike, on_delete=models.PROTECT, default='9')
-    dtr = models.DateField(default=datetime.date.today())
+#    dtr = models.DateField(default=datetime.date.today())
+    dtr = models.DateField()
     tm = models.TimeField(null=True)
     dst = models.FloatField(null=True)
     av = models.FloatField(null=True)
