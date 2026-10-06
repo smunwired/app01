@@ -1,0 +1,3 @@
+{% for image in images %}
+<a href="{% url inv 'add_static_image' %}"><img src="/static/inv/{{image}}" width="50" height="50" title="{{ image }}" ></a>
+{% endfor %}
