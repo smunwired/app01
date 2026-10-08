@@ -34,6 +34,18 @@ class Instrument(models.Model):
     notes = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.brand} {self.model}"
-#        return {self.badge, self.model}
+        if (self.brand):
+            return f"{self.brand} {self.model}"
+        else:
+            return self.model
 
+class Image(models.Model):
+    instrument = models.ForeignKey(Instrument, on_delete=models.CASCADE)
+    image = models.CharField(max_length=255)
+    alt = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        if (self.alt):
+            return self.alt
+        else:
+            return self.image

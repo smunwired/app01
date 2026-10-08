@@ -1,6 +1,6 @@
 <table>
     <tr>
-	    <th>Brand<th>Model<th>Year<th>Manufacturer<th>Purchase Date<th>Purchase Price<th>Sale Date<th>Sale Date<td><a href="add">add</a></td>
+	    <th>Brand<th>Model<th>Year<th>Manufacturer<th>Purchase Date<th>Purchase Price<th>Sale Date<th>Sale Date<td><a href="{% url 'inv:instrument_add' %}">add</a></td>
     </tr>
     <!-- Iterate over object_list -->
     {% for object in object_list %}
@@ -14,9 +14,9 @@
     <td>{{ object.purchase_price}}</td>
     <td>{{ object.sold_date}}</td>
     <td>{{ object.sold_price}}</td>
-    <td><a href="detail/{{ object.id }}">detail</a></td>
-    <td><a href="edit/{{ object.id }}">edit</a></td>
-    <td><a href="delete/{{ object.id }}">delete</a></td>
+    <td><a href="{% url 'inv:instrument_detail' object.id %}">detail</a></td>
+    <td><a href="{% url 'inv:instrument_edit' object.id %}">edit</a></td>
+    <td><a href="{% url 'inv:instrument_delete' object.id %}">delete</a></td>
 </tr>
     <!-- If object_list is empty  -->
     {% empty %}
