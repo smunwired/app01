@@ -31,10 +31,11 @@ class ImportImageView(CreateView):
 
 class ImageCreateView(CreateView):
     model = Image
-    fields = "__all__"
+    fields = ['instrument','alt']
     success_url = "/inv/gallery"
     def form_valid(self, form):
-        form.instance.image = self.request.GET.get("image")
+        image_name = self.kwargs['name']
+        form.instance.name = image_name
         return super().form_valid(form)
 	
 class ManufacturerListView(ListView):
@@ -76,10 +77,10 @@ class InstrumentDeleteView(DeleteView):
     model = Instrument
     success_url = "/inv"
 
-class ImageCreateView(CreateView):
-    model = Image
-    fields = "__all__"
-    success_url = "/inv/images"
+#class ImageCreateView(CreateView):
+#    model = Image
+#    fields = "__all__"
+#    success_url = "/inv/images"
 	
 class ImageListView(ListView):
     model = Image

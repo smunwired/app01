@@ -41,7 +41,7 @@ class Instrument(models.Model):
 
 class Image(models.Model):
     instrument = models.ForeignKey(Instrument, on_delete=models.CASCADE)
-    image = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     alt = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
