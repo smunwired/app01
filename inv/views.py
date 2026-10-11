@@ -9,6 +9,16 @@ from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView 
 import os
 
+def UnattachedImagesView(request):
+    path = '/home/munns/git/app01/inv/static/inv'
+    img_list = os.listdir(path)
+    newlist =[]
+    for p in img_list:
+        if Image.objects.filter(name=p):
+            pass
+        else:
+            newlist.append(p) #found no match, add to newlist
+    return render(request, 'inv/gallery.html', {'images': newlist})
     
 def GalleryView(request):
     path = '/home/munns/git/app01/inv/static/inv'
@@ -32,10 +42,11 @@ class ImportImageView(CreateView):
 class ImageCreateView(CreateView):
     model = Image
     fields = ['instrument','alt']
-    success_url = "/inv/gallery"
+    success_url = "/inv/unattached"
     def form_valid(self, form):
-        image_name = self.kwargs['name']
-        form.instance.name = image_name
+        form.instance.name = self.kwargs['name']
+#        image_name = self.kwargs['name']
+#        form.instance.name = image_name
         return super().form_valid(form)
 	
 class ManufacturerListView(ListView):
