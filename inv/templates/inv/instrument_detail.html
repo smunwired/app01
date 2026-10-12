@@ -5,3 +5,30 @@
 <p>{{ object.badge }}</p>
 <p>{{ object.model }}</p>
 <p>{{ object.notes }}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+<h3>images</h3>
+<table>
+<th>alt</th><th>url</th><td></td><td><a href="{% url 'inv:image_add' %}">add</a></td></tr>
+{% load static %}
+{% for i in instrument.image_set.all %}
+  <tr>
+    <td>{{i.image}}</td>
+    <td width="100">{% if i.image %}{{i.image}}{%else%}{{i.title_image}}{%endif%}</td>
+    <td>
+      {% if i.image %}
+        <a href="{% url 'ttl:image_edit' i.id %}"><img src=" {% static 'ttl/' %}{{ i.title_image }}" width="50" height="50" title="static:{{ i.alt }}" ></a>
+      {% elif i.url %}
+        <a href="{% url 'ttl:image_edit' i.id %}"><img src=" {{ i.url }}" width="50" height="50" title="http:{{ i.alt }}" ></a>
+      {% else %}
+        <p/>no image found for {{ i.title }}
+      {% endif %}
+    </td>
+    <td><a href="{% url 'inv:image_edit' i.pk %}">edit</a></td>
+    <td><a href="{% url 'inv:image_delete' i.pk %}">delete</a></td>
+  </tr>
+{% empty %}
+  <p>This instrument has no images.</p>
+{% endfor %}
+</table>
+</div>

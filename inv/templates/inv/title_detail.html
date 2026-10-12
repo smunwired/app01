@@ -1,0 +1,74 @@
+{% block content %}
+
+<h2><a href="{% url 'ttl:artist_edit' title.artist_id %}">{{ title.artist.prefix_name }} {{ title.artist.indexed_name }}</a> : {{ title.prefix_name}} {{title.indexed_name }}</h2>
+<h2><a href="{% url 'ttl:artist_detail' title.artist_id %}">{{ title.artist.prefix_name }} {{ title.artist.indexed_name }}</a> : {{ title.prefix_name}} {{title.indexed_name }}</h2>
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<th><h4>detail</h4>
+	<tr><td>release </td><td>{{ title.first_released }}</td></tr>
+	<tr><td>compilation</td><td>{{ title.compilation }}</td></tr>
+</table>
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+	<th><h4>listens</h4><td><a href="{% url 'ttl:title_listen_add' title.id %}">add</a></td>
+{% for l in title.listen_set.all|dictsortreversed:"listen_date" %}
+  <tr><td>{{l.listen_date}}</td>
+  <td><a href="{% url 'ttl:listen_edit' l.pk %}">edit</a></td>
+  <td><a href="{% url 'ttl:listen_delete' l.pk %}">delete</a></td>
+</tr>  
+{% empty %}
+  <p>This title has no listens.</p>
+{% endfor %}
+</table>
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<table>
+<h3>media</h3>
+  <th>type</th><th>release year</th><th>label</th><th>date added</th><th><a href="{% url 'ttl:title_medium_add' %}">add</a></tr>
+{% for l in title.title_medium_set.all %}
+  <tr><td>{{l.medium.name}}</td>
+  <td>{{l.type}}</td>
+  <td>{{l.release_year}}</td>
+  <td>{{l.label}}</td>
+  <td>{{l.date_added}}</td>
+  <td><a href="{% url 'ttl:title_medium_edit' l.pk %}">edit</a></td>
+  <td><a href="{% url 'ttl:title_medium_delete' l.pk %}">delete</a></td>
+</tr>  
+{% empty %}
+  <p>This title has no media.</p>
+{% endfor %}
+</table>
+</div>
+
+<div style="margin-left:20px;margin-top:20px">
+<h3>images</h3>
+<table>
+<th>alt</th><th>url</th><td></td><td><a href="{% url 'ttl:image_add' %}">add</a></td></tr>
+{% load static %}
+{% for i in title.image_set.all %}
+  <tr>
+    <td>{{i.alt}}</td>
+    <td width="100">{% if i.url %}{{i.url}}{%else%}{{i.title_image}}{%endif%}</td>
+    <td>
+      {% if i.title_image %}
+        <a href="{% url 'ttl:image_edit' i.id %}"><img src=" {% static 'ttl/' %}{{ i.title_image }}" width="50" height="50" title="static:{{ i.alt }}" ></a>
+      {% elif i.url %}
+        <a href="{% url 'ttl:image_edit' i.id %}"><img src=" {{ i.url }}" width="50" height="50" title="http:{{ i.alt }}" ></a>
+      {% else %}
+        <p/>no image found for {{ i.title }}
+      {% endif %}
+    </td>
+    <td><a href="{% url 'ttl:image_edit' i.pk %}">edit</a></td>
+    <td><a href="{% url 'ttl:image_delete' i.pk %}">delete</a></td>
+  </tr>  
+{% empty %}
+  <p>This title has no images.</p>
+{% endfor %}
+</table>
+</div>
+
+{% endblock %}
+
