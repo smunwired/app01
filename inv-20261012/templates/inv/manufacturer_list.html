@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <td><a href="manufacturers/add">add</a></td>
+        <td><a href="/bikes/">bikes</a></td>
+    </tr>
+    <!-- Iterate over object_list -->
+    {% for object in object_list %}
+    <!-- Display Objects -->
+<tr>    
+    <td>{{ object.badge }}</td>
+    <td>{{ object.manufacturer }}</td>
+    <td><a href="manufacturers/edit/{{ object.id }}">edit</a></td>
+    <td><a href="manufacturers/delete/{{ object.id }}">delete</a></td>
+</tr>
+    <!-- If object_list is empty  -->
+    {% empty %}
+    <p/>No objects yet.
+    {% endfor %}
+</table>
