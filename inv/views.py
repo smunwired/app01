@@ -99,7 +99,6 @@ class ImageListView(ListView):
  
 class ImageDetailView(DetailView):
     model = Image
-    model = Instrument
 
 class ImageUpdateView(UpdateView):
     model = Image
