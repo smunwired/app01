@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Project,Vendor,Branch,Transaction,Reader,Account,Transaction_type,Payment_type
+from .models import Project,Vendor,Branch,Transaction,Reader,Account,Transaction_type,Transaction_sub_type,Payment_type
 
 class AccountAdmin(admin.ModelAdmin):
     model = Account

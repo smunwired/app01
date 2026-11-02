@@ -1,7 +1,7 @@
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView 
 from django.urls import reverse_lazy
 from django.shortcuts import render
-from .models import Vendor, Branch, Transaction, Project, Account
+from .models import Vendor, Branch, Transaction, Project, Account, Transaction_type, Transaction_sub_type
 from .forms import TransactionForm
 from django.views.generic.detail import DetailView
 from django.utils import timezone
@@ -71,19 +71,106 @@ class AccountTotalsYearMonth(ListView):
 		order by 2''',[self.year,self.month])
         return queryset
 
-#class TransactionAccountYearMonthListVie(ListView):
-#    fields = "__all__"
-#    model = Transaction
-#    template_name = "tr/transaction_month_list.html"
-#    def get_queryset(self):
-#        self.account = self.kwargs['pk']
-#        self.year = self.kwargs['year']
-#        self.month = self.kwargs['month']
-#        queryset = Transaction.objects.raw('''select a.id as id,a.name as name,sum(amount*cr_dr) as amount 
-#		from tr_account a join tr_transaction t on t.account_id=a.id 
-#		where account_id=%s and date_part('year',statement_date)=%s and date_part('month',statement_date)=%s 
-#		group by a.id,a.name order by 2''',[self.pk,self.year,self.month])
-#        return queryset
+class TypeListView(ListView):
+    model = Transaction_type
+    template_name = "tr/type_list.html"
+    ordering = ['name']
+
+class SubTypeListView(ListView):
+    model = Transaction_sub_type
+    template_name = "tr/sub_type_list.html"
+    ordering = ['name']
+
+class TransactionTypeTransactionListView(ListView):
+    fields = "__all__"
+    model = Transaction_type
+    template_name = "tr/transaction_list.html"
+    ordering = '-statement_date'
+    paginate_by = 22
+
+    def get_queryset(self):
+        account = self.kwargs["pk"]
+        queryset = Transaction.objects.all().annotate(new_date=Coalesce("receipt_date","transaction_date","statement_date",date.today())).filter(transaction_type_id=account).order_by('-new_date')
+        return queryset
+
+class TransactionSubTypeTransactionListView(ListView):
+    fields = "__all__"
+    model = Transaction_sub_type
+    template_name = "tr/transaction_list.html"
+    ordering = '-statement_date'
+    paginate_by = 22
+
+    def get_queryset(self):
+        account = self.kwargs["pk"]
+        queryset = Transaction.objects.all().annotate(new_date=Coalesce("receipt_date","transaction_date","statement_date",date.today())).filter(transaction_sub_type_id=account).order_by('-new_date')
+        return queryset
+
+class TransactionTypeTotalsYear(ListView):
+    fields = "__all__"
+    model = Transaction_type
+    template_name = "tr/type_totals.html"
+    def get_queryset(self):
+        self.year = self.kwargs['year']
+        queryset = Transaction_type.objects.raw('''select a.id as id,a.name as name,sum(amount*cr_dr) as amount from tr_transaction_type a join tr_transaction t on t.transaction_type_id=a.id where date_part('year',statement_date)=%s group by a.id,a.name order by 2''',[self.year])
+        return queryset
+
+class TransactionTypeTotalsYearMonth(ListView):
+    fields = "__all__"
+    model = Transaction_type
+    template_name = "tr/type_year_month_totals.html"
+    def get_queryset(self):
+        self.year = self.kwargs['year']
+        self.month = self.kwargs['month']
+        queryset = Account.objects.raw('''select a.id as id,a.name as name,sum(amount*cr_dr) as amount,
+		date_part('year',statement_date)::integer as year,
+		date_part('month',statement_date)::integer as month
+		from tr_transaction_type a join tr_transaction t on t.account_id=a.id 
+		where date_part('year',statement_date)=%s and date_part('month',statement_date)=%s 
+		group by a.id,a.name,date_part('year',statement_date)::integer,date_part('month',statement_date)::integer
+		order by 2''',[self.year,self.month])
+        return queryset
+
+class TransactionTypeTotals(ListView):
+    fields = "__all__"
+    model = Transaction_type
+    template_name = "tr/type_totals.html"
+
+    def get_queryset(self):
+        queryset = Transaction_type.objects.raw(" select a.id as id,a.name as name,sum(amount*cr_dr) as amount from tr_transaction_type a join tr_transaction t on t.transaction_type_id=a.id group by a.id,a.name order by 2")
+        return queryset
+
+class TransactionTypeAddView(CreateView):
+    model = Transaction_type
+    success_url = reverse_lazy('tr:type_list')
+    fields = "__all__"
+    template_name = "tr/type_form.html"
+
+class TransactionSubTypeAddView(CreateView):
+    model = Transaction_sub_type
+    success_url = reverse_lazy('tr:sub_type_list')
+    fields = "__all__"
+    template_name = "tr/sub_type_form.html"
+
+class TransactionTypeDetailView(DetailView):
+    model = Transaction_type
+    template_name = "tr/account_detail.html"
+
+class TransactionTypeUpdateView(UpdateView):
+    model = Transaction_type
+    fields = "__all__"
+
+class TransactionTypeDeleteView(DeleteView):
+    model = Transaction_type
+    success_url = reverse_lazy('tr:type_list')
+
+class TransactionSubTypeUpdateView(UpdateView):
+    model = Transaction_sub_type
+    fields = "__all__"
+    success_url = reverse_lazy('tr:sub_type_list')
+
+class TransactionSubTypeDeleteView(DeleteView):
+    model = Transaction_sub_type
+    success_url = reverse_lazy('tr:sub_type_list')
 
 class VendorListView(ListView):
     fields = "__all__"
@@ -299,14 +386,10 @@ class AccountUpdateView(UpdateView):
 	fields = "__all__"
 class AccountDeleteView(DeleteView):
 	model = Account
-
 class AccountDetailView(DetailView):
 	model = Account
 	template_name = "tr/account_detail.html"
 
-#class AccountYearMonthDetailView(DetailView):
-#	model = Account
-#	ordering = ['name']
 class TransactionAccountYearMonthListView(ListView):
     model=Transaction
     fields = "__all__"
@@ -327,6 +410,45 @@ class TransactionAccountYearMonthListView(ListView):
         context["account"] = self.kwargs['pk']
         this_account_name = Account.objects.filter(pk=self.kwargs['pk'])
         context["account_name"] = this_account_name
+        context["thismonth"] = self.kwargs['month']
+        context["thisyear"] = self.kwargs['year']
+        if self.kwargs['month'] == 1:
+          context["lastmonth"] = 12
+          context["lastyear"] = self.kwargs['year']-1
+          context["nextmonth"] = self.kwargs['month']+1
+          context["nextyear"] = self.kwargs['year']
+        elif self.kwargs['month'] == 12:
+          context["lastmonth"] = self.kwargs['month']-1
+          context["lastyear"] = self.kwargs['year']
+          context["nextmonth"] = 1
+          context["nextyear"] = self.kwargs['year']+1
+        else:
+          context["lastmonth"] = self.kwargs['month']-1
+          context["lastyear"] = self.kwargs['year']
+          context["nextmonth"] = self.kwargs['month']+1
+          context["nextyear"] = self.kwargs['year']
+        return context
+        
+
+class TransactionTypeYearMonthListView(ListView):
+    model=Transaction
+    fields = "__all__"
+    template_name = "tr/transaction_month_list.html"
+    ordering = '-statement_date'
+    paginate_by = 22
+    def get_queryset(self):
+        self.year = self.kwargs['year']
+        self.month = self.kwargs['month']
+        self.account_id = self.kwargs['pk']
+        #self.date = Coalesce(self.statement_date,self.receipt_date)
+        self.date = Coalesce('statement_date','receipt_date')
+        queryset = Transaction.objects.filter(statement_date__year=self.year,statement_date__month=self.month,transaction_type_id=self.transaction_type_id).order_by('statement_date')
+        return queryset
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["type"] = self.kwargs['pk']
+        this_type_name = Transaction_type.objects.filter(pk=self.kwargs['pk'])
+        context["type_name"] = this_type_name
         context["thismonth"] = self.kwargs['month']
         context["thisyear"] = self.kwargs['year']
         if self.kwargs['month'] == 1:
