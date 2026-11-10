@@ -32,6 +32,14 @@ class Transaction_type(models.Model):
     class Meta:
         ordering = ['name']
 
+class Transaction_sub_type(models.Model):
+    name = models.CharField(max_length=55)
+    transaction_type = models.ForeignKey(Transaction_type, on_delete=models.CASCADE)
+    def __str__(self):
+        return(self.name)
+    class Meta:
+        ordering = ['name']
+
 class Payment_type(models.Model):
     name = models.CharField(max_length=22)
     def __str__(self):
@@ -73,6 +81,7 @@ class Transaction(models.Model):
     vendor_name = models.CharField("non recurring vendor", null=True, blank=True)
     account = models.ForeignKey(Account, on_delete=models.SET_DEFAULT, default=3)
     transaction_type = models.ForeignKey(Transaction_type, on_delete=models.SET_DEFAULT, default=5)
+    transaction_sub_type = models.ForeignKey(Transaction_sub_type, on_delete=models.CASCADE, blank=True, null=True)
     payment_type = models.ForeignKey(Payment_type, on_delete=models.SET_NULL, null=True, blank=True, default=2)
     receipt_date = models.DateField("date on receipt", null=True, blank=True)
     statement_date = models.DateField("date on statement", null=True, blank=True)
