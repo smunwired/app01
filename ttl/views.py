@@ -4,6 +4,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import FormView, UpdateView, DeleteView, CreateView
 from django.urls import reverse, reverse_lazy
 from django.shortcuts import get_object_or_404
+from django.db.models import Max
 
 
 # Create your views here.
@@ -130,12 +131,21 @@ class ListenImageList(ListView):
 					join ttl_title t on t.id=l.title_id 
 					join ttl_image i on i.title_id=t.id 
 					order by listen_date desc limit 100''')
+
 class ListenDetail(DetailView):
     model = Listen
+
+class ListenImageMostRecentList(ListView):
+    fields = "__all__"
+    template_name = 'ttl/listen_recent_list.html'
+    def get_queryset(self):
+        return Listen.objects.values('title_id','title__indexed_name','title__image__url','title__image__title_image').annotate(most_recent=Max('listen_date')).order_by('-most_recent')[:120]
+
 class ListenAdd(CreateView):
     model = Listen
     fields = "__all__"
     success_url = "/ttl/listens"
+
 class ListenUpdate(UpdateView):
     fields = "__all__"
     model = Listen
