@@ -33,6 +33,9 @@ class Instrument(models.Model):
     sold_price = models.FloatField(null=True, blank=True)
     notes = models.CharField(max_length=255, null=True, blank=True)
 
+    class Meta:
+        ordering = ["brand"]
+
     def __str__(self):
         if (self.brand):
             return f"{self.brand} {self.model}"
