@@ -86,7 +86,7 @@ class TitleImageAdd(CreateView):
 class TitleListenAdd(CreateView):
     model = Listen
     fields = "listen_date",
-    success_url = "/ttl/titles"
+    success_url = "/ttl"
     def form_valid(self, form):
         title = get_object_or_404(Title, pk=self.kwargs.get('title_id'))
         form.instance.title = title
@@ -152,7 +152,7 @@ class ListenUpdate(UpdateView):
     success_url = "/ttl/listens"
 class ListenDelete(DeleteView):
     model = Listen
-    success_url = "/ttl/listens"
+    success_url = "/ttl"
     template_name = 'ttl/listen_confirm_delete.html'
 
 class ImageList(ListView):
